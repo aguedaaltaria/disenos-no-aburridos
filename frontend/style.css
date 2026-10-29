@@ -1,0 +1,91 @@
+/* 
+  Variables CSS:
+  Centralizamos los colores para mantener coherencia y facilitar cambios.
+*/
+:root {
+    --bg-dark: #0f172a;        /* Fondo oscuro profundo */
+    --text-main: #f8fafc;      /* Blanco roto */
+    --primary: #10b981;        /* Esmeralda vibrante */
+    --primary-hover: #059669;  
+    --secondary: #f43f5e;      /* Rosa coral intenso */
+}
+
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Gradiente radial sutil de fondo */
+    background-image: radial-gradient(circle at top right, rgba(244, 63, 94, 0.15), transparent 40%),
+                      radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.15), transparent 40%);
+}
+
+.showcase-container {
+    width: 90%;
+    max-width: 1000px;
+    padding: 2rem 0;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+/* Gradiente de texto para la palabra Showcase */
+.hero h1 span {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin-top: 1rem;
+}
+
+/* CSS Grid para las tarjetas de navegación */
+.grid-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.nav-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.nav-card, .nav-card:visited, .nav-card:active {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    text-decoration: none !important; /* Elimina el subrayado por defecto */
+    color: var(--text-main) !important; /* Fuerza el texto a blanco hielo */
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
