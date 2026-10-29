@@ -146,3 +146,48 @@ h1 {
 .neo-btn:hover svg {
     transform: translateX(4px) scale(1.1);
 }
+
+/* Sección de galería de iconos */
+.icon-showcase {
+    margin-top: 2rem;
+    border-top: 4px solid var(--black-neo);
+    padding-top: 1.5rem;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.icon-card {
+    background-color: var(--white-neo);
+    border: 3px solid var(--black-neo);
+    box-shadow: 4px 4px 0px var(--black-neo);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: transform 0.1s ease;
+}
+
+.icon-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--black-neo);
+    background-color: #f1f5f9;
+}
+
+/* Tamaño y grosor de los iconos en la galería */
+.icon-card svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: var(--black-neo);
+    stroke-width: 3;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+}
