@@ -1,0 +1,220 @@
+:root {
+    --bg-skeuo: #1e2229;         /* Fondo de estudio o rack de audio */
+    --panel-skeuo: #2b303b;      /* Superficie metálica oscura cepillada */
+    --border-metal: #4f5666;     /* Borde biselado metálico */
+    --accent-skeuo: #3b82f6;     /* LED azul indicador de encendido */
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-skeuo);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* 
+  REGLA CLAVE SKEUOMORPHISM MODERNO:
+  Estructura con aspecto de hardware físico de estudio, tornillos en esquinas 
+  y múltiples sombras interiores y exteriores para dar volumen táctil.
+*/
+.skeuo-container {
+    width: 100%;
+    max-width: 900px;
+    background: linear-gradient(145deg, #323846, #222731);
+    border: 3px solid var(--border-metal);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 2rem;
+    position: relative;
+}
+
+/* Botón de regreso estilo hardware */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    background: linear-gradient(180deg, #3b4252, #2e3440);
+    border: 2px solid #4c566a;
+    color: var(--text-main);
+    font-weight: 700;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+    transition: all 0.2s ease;
+    margin-bottom: 2rem;
+}
+
+.btn-back:hover {
+    background: linear-gradient(180deg, #434c5e, #3b4252);
+    border-color: var(--accent-skeuo);
+    transform: translateY(-2px);
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 0.5px;
+}
+
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Tarjeta con textura de rack de audio */
+.skeuo-card {
+    background: linear-gradient(145deg, #282e3a, #1f232c);
+    border: 2px solid var(--border-metal);
+    border-radius: 12px;
+    padding: 1.8rem;
+    box-shadow: inset 0 2px 4px rgba(255,255,255,0.05),
+                0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Control táctil / Dial Skeuomorphic */
+.skeuo-dial-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.skeuo-dial {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #3a4252 0%, #1a1e26 100%);
+    border-radius: 50%;
+    border: 4px solid #4f5666;
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.6),
+        inset 0 2px 3px rgba(255, 255, 255, 0.2),
+        inset 0 -3px 5px rgba(0, 0, 0, 0.8);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Indicador físico del dial */
+.skeuo-dial::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    width: 3px;
+    height: 18px;
+    background-color: var(--accent-skeuo);
+    border-radius: 2px;
+    box-shadow: 0 0 6px var(--accent-skeuo);
+}
+
+.skeuo-input {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    font-family: inherit;
+    background: #191d24;
+    border: 2px solid #3b4252;
+    border-radius: 8px;
+    color: var(--text-main);
+    outline: none;
+    margin-bottom: 1rem;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.5);
+    transition: all 0.2s ease;
+}
+
+.skeuo-input:focus {
+    border-color: var(--accent-skeuo);
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.5), 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+.skeuo-btn {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 6px 15px rgba(29, 78, 216, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.1s ease;
+}
+
+.skeuo-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(29, 78, 216, 0.4),
+                inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Galería de Iconos UI */
+.icon-showcase {
+    margin-top: 2.5rem;
+    border-top: 2px solid var(--border-metal);
+    padding-top: 1.5rem;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.icon-card {
+    background: linear-gradient(145deg, #282e3a, #1f232c);
+    border: 2px solid var(--border-metal);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.05),
+                0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
+
+.icon-card:hover {
+    color: var(--text-main);
+    border-color: var(--accent-skeuo);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.icon-card svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: var(--accent-skeuo);
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
