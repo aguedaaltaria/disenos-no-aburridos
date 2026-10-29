@@ -1,0 +1,218 @@
+:root {
+    --bg-organic: #121816;       /* Fondo verde bosque muy oscuro y natural */
+    --surface-organic: rgba(255, 255, 255, 0.05); /* Superficie translúcida suave */
+    --border-organic: rgba(255, 255, 255, 0.12);
+    --primary-sage: #34d399;     /* Verde salvia vibrante */
+    --accent-terracotta: #fb923c;/* Naranja terracota cálido */
+    --text-main: #f3f4f6;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-organic);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* 
+  Formas orgánicas de fondo (Blobs animados):
+  Dan movimiento fluido al fondo mediante desvanecimientos y cambios sutiles de forma.
+*/
+.organic-blob {
+    position: absolute;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.5;
+    animation: morphBlob 12s ease-in-out infinite alternate;
+}
+
+.blob-1 {
+    width: 400px; height: 400px;
+    background: rgba(52, 211, 153, 0.25);
+    top: -100px; left: -100px;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+.blob-2 {
+    width: 450px; height: 450px;
+    background: rgba(251, 146, 60, 0.2);
+    bottom: -150px; right: -100px;
+    border-radius: 30% 70% 70% 30% / 50% 60% 40% 50%;
+    animation-delay: -4s;
+}
+
+@keyframes morphBlob {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
+        transform: translate(30px, 20px) scale(1.05);
+    }
+    100% {
+        border-radius: 50% 50% 40% 60% / 70% 30% 50% 50%;
+        transform: translate(-20px, 30px) scale(0.95);
+    }
+}
+
+/* 
+  REGLA CLAVE ORGANIC DESIGN:
+  Uso de border-radius asimétricos complejos para simular formas fluidas de la naturaleza.
+*/
+.organic-container {
+    width: 100%;
+    max-width: 900px;
+    background: var(--surface-organic);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-organic);
+    border-radius: 40px 20px 50px 30px / 30px 50px 20px 40px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    margin-top: 2rem;
+}
+
+/* Botón de regreso con estilo píldora */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    background: var(--surface-organic);
+    border: 1px solid var(--border-organic);
+    color: var(--text-main);
+    font-weight: 700;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.btn-back:hover {
+    background: rgba(52, 211, 153, 0.15);
+    border-color: var(--primary-sage);
+    transform: translateX(-4px);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-sage), var(--accent-terracotta));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Tarjeta fluida */
+.organic-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-organic);
+    border-radius: 30px 15px 25px 15px / 20px 30px 15px 25px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.organic-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-terracotta);
+}
+
+/* Campos de formulario en forma de píldora */
+.organic-input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-family: inherit;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-organic);
+    border-radius: 50px;
+    color: var(--text-main);
+    outline: none;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.organic-input:focus {
+    border-color: var(--primary-sage);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(52, 211, 153, 0.2);
+}
+
+.organic-btn {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--primary-sage), #059669);
+    color: #0f172a;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 211, 153, 0.3);
+}
+
+.organic-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(52, 211, 153, 0.5);
+}
+
+/* Galería de Iconos UI adaptada */
+.icon-showcase {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--border-organic);
+    padding-top: 1.5rem;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.icon-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-organic);
+    border-radius: 20px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.icon-card:hover {
+    background: rgba(52, 211, 153, 0.1);
+    border-color: var(--primary-sage);
+    transform: translateY(-3px);
+}
+
+.icon-card svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: var(--primary-sage);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
