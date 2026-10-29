@@ -1,0 +1,166 @@
+:root {
+    --bg-wire: #f8fafc;          /* Blanco papel técnico de fondo */
+    --surface-wire: #ffffff;     /* Superficie blanca limpia */
+    --border-wire: #0f172a;      /* Negro tinta estricto para esquemas */
+    --text-main: #0f172a;        /* Texto negro principal */
+    --text-muted: #64748b;       /* Gris plano para anotaciones */
+}
+
+body {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; /* Tipografía tipo código/plano esquemático */
+    background-color: var(--bg-wire);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* 
+  REGLA CLAVE WIREFRAME:
+  Bordes de 2px sólidos en color negro absoluto, esquinas rectas o de radio muy bajo, 
+  sin gradientes, sin sombras difuminadas. Un esquema puro.
+*/
+.wire-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: var(--surface-wire);
+    border: 2px solid var(--border-wire);
+    border-radius: 0px; /* Estilo de plano arquitectónico totalmente cuadrado */
+    padding: 2.5rem;
+    box-shadow: none; /* Cero sombras para mantener el aspecto de papel plano */
+    margin-top: 2rem;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    background-color: var(--surface-wire);
+    border: 2px solid var(--border-wire);
+    color: var(--text-main);
+    font-weight: 700;
+    font-family: inherit;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0px;
+    transition: all 0.1s ease;
+    margin-bottom: 2rem;
+}
+
+.btn-back:hover {
+    background-color: var(--border-wire);
+    color: var(--surface-wire);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+    border-bottom: 2px dashed var(--border-wire);
+    padding-bottom: 0.5rem;
+}
+
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.wire-card {
+    background-color: var(--surface-wire);
+    border: 2px solid var(--border-wire);
+    border-radius: 0px;
+    padding: 1.8rem;
+}
+
+.wire-input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-family: inherit;
+    background-color: var(--surface-wire);
+    border: 2px solid var(--border-wire);
+    border-radius: 0px;
+    color: var(--text-main);
+    outline: none;
+    margin-bottom: 1rem;
+}
+
+.wire-input::placeholder {
+    color: var(--text-muted);
+}
+
+.wire-btn {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.9rem 1.8rem;
+    border: 2px solid var(--border-wire);
+    border-radius: 0px;
+    cursor: pointer;
+    background-color: var(--border-wire);
+    color: var(--surface-wire);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.1s ease;
+}
+
+.wire-btn:hover {
+    background-color: var(--surface-wire);
+    color: var(--border-wire);
+}
+
+/* Galería de Iconos UI adaptada a Wireframe */
+.icon-showcase {
+    margin-top: 2.5rem;
+    border-top: 2px dashed var(--border-wire);
+    padding-top: 1.5rem;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.icon-card {
+    background-color: var(--surface-wire);
+    border: 2px solid var(--border-wire);
+    border-radius: 0px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    transition: all 0.1s ease;
+}
+
+.icon-card:hover {
+    background-color: var(--border-wire);
+    color: var(--surface-wire);
+}
+
+.icon-card:hover svg {
+    stroke: var(--surface-wire);
+}
+
+.icon-card svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: var(--border-wire);
+    stroke-width: 2;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+}
