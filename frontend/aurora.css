@@ -1,0 +1,238 @@
+:root {
+    --bg-aurora: #090d16;         /* Fondo azul/negro ligeramente más vivo */
+    --surface-aurora: rgba(17, 24, 39, 0.45); /* Contenedor más translúcido para dejar pasar la luz */
+    --border-aurora: rgba(255, 255, 255, 0.2);
+    --aurora-1: #00f2fe;          /* Cian neón muy brillante */
+    --aurora-2: #4facfe;          /* Azul celeste eléctrico */
+    --aurora-3: #a855f7;          /* Púrpura intenso */
+    --aurora-4: #10b981;          /* Esmeralda aurora */
+    --text-main: #f9fafb;
+    --text-muted: #cbd5e1;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-aurora);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* 
+  AURORA MEJORADA:
+  Aumentamos el tamaño, la opacidad y añadimos más puntos de luz con movimiento 
+  para que el cielo se sienta completamente iluminado por los gradientes.
+*/
+.aurora-glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.85; /* Mucho más visible e intensa */
+    animation: auroraDance 12s ease infinite alternate;
+}
+
+.glow-1 {
+    background: var(--aurora-1);
+    top: -150px;
+    left: -100px;
+}
+
+.glow-2 {
+    background: var(--aurora-2);
+    top: 20%;
+    right: -150px;
+    animation-delay: -4s;
+}
+
+.glow-3 {
+    background: var(--aurora-3);
+    bottom: -100px;
+    left: 10%;
+    animation-delay: -8s;
+}
+
+.glow-4 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: -1;
+    background: var(--aurora-4);
+    bottom: 20%;
+    right: 10%;
+    opacity: 0.6;
+    animation: auroraDance 10s ease infinite alternate-reverse;
+}
+
+@keyframes auroraDance {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    50% { transform: translate(60px, 80px) scale(1.15) rotate(15deg); }
+    100% { transform: translate(-50px, 40px) scale(0.9) rotate(-15deg); }
+}
+
+/* Contenedor principal translúcido con brillo de borde */
+.aurora-container {
+    width: 100%;
+    max-width: 900px;
+    background: var(--surface-aurora);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--border-aurora);
+    border-radius: 28px;
+    padding: 2.5rem;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    margin-top: 2rem;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    background: var(--surface-aurora);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-aurora);
+    color: var(--text-main);
+    font-weight: 700;
+    padding: 0.6rem 1.5rem;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--aurora-1);
+    transform: translateX(-4px);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--aurora-1), var(--aurora-3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.aurora-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-aurora);
+    border-radius: 20px;
+    padding: 1.8rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.aurora-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--aurora-1);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 242, 254, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.aurora-input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-family: inherit;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-aurora);
+    border-radius: 14px;
+    color: var(--text-main);
+    outline: none;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.aurora-input:focus {
+    border-color: var(--aurora-1);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.aurora-btn {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.9rem 1.8rem;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--aurora-1), var(--aurora-2));
+    color: #030712;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 25px rgba(0, 242, 254, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.aurora-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 242, 254, 0.6);
+}
+
+/* Galería de Iconos UI */
+.icon-showcase {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--border-aurora);
+    padding-top: 1.5rem;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.icon-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-aurora);
+    border-radius: 16px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.icon-card:hover {
+    background: rgba(0, 242, 254, 0.15);
+    border-color: var(--aurora-1);
+    color: var(--text-main);
+    transform: translateY(-3px);
+}
+
+.icon-card svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: var(--aurora-1);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
