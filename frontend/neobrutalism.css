@@ -120,3 +120,29 @@ h1 {
     border-color: var(--accent-pink);
 }
 
+/* Utilidades para botones con iconos neobrutalistas */
+.btn-with-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Trazos gruesos y cuadrados para hacer juego con los bordes duros */
+.btn-with-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3; 
+    stroke-linecap: square; 
+    stroke-linejoin: miter;
+    transition: transform 0.1s ease;
+}
+
+/* Efectos de movimiento al interactuar */
+.btn-back:hover svg {
+    transform: translateX(-4px);
+}
+.neo-btn:hover svg {
+    transform: translateX(4px) scale(1.1);
+}

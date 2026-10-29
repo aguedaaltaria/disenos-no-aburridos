@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism - Modern UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="glassmorphism.css">
+</head>
+<body>
+
+    <!-- Orbes decorativos para el fondo -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <a href="/" class="btn-back btn-with-icon">
+        <!-- Icono Flecha Izquierda -->
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Volver al Hub
+    </a>
+
+    <main class="glass-container">
+        <h1>Glassmorphism</h1>
+        <p style="font-size: 1.2rem; font-weight: 700; opacity: 0.9;">
+            Profundidad visual mediante capas translúcidas. Utiliza desenfoque de fondo y bordes iluminados para simular cristales.
+        </p>
+
+        <div class="components-grid">
+            <article class="glass-card">
+                <h2>Tarjeta Esmerilada</h2>
+                <p>Las formas de colores vibrantes en el fondo (los orbes) permiten que el filtro <code>blur()</code> tenga contraste para distorsionar la luz.</p>
+            </article>
+
+            <section style="display: flex; flex-direction: column; justify-content: center;">
+                <input type="text" class="glass-input" placeholder="Tu nombre..." />
+                
+                <button class="glass-btn btn-with-icon" style="justify-content: center;">
+                    Enviar Mensaje
+                    <!-- Icono Enviar / Flecha Derecha -->
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>

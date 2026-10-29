@@ -9,7 +9,11 @@
 </head>
 <body>
 
-    <a href="/" class="btn-back">← Volver al Hub</a>
+    <!-- Botón de regreso principal con icono -->
+    <a href="/" class="btn-back btn-with-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Volver al Hub
+    </a>
 
     <main class="neo-container">
         <h1>Neobrutalismo</h1>
@@ -18,14 +22,21 @@
         </p>
 
         <div class="components-grid">
+            <!-- Componente: Tarjeta -->
             <article class="neo-card">
                 <h2>Tarjeta de Impacto</h2>
                 <p>Las tarjetas no necesitan ser sutiles. Los colores vibrantes crean un choque visual intencional.</p>
             </article>
 
+            <!-- Componente: Formulario y Botón con Icono -->
             <section style="display: flex; flex-direction: column; justify-content: center;">
                 <input type="text" class="neo-input" placeholder="Escribe algo aquí..." />
-                <button class="neo-btn">Acción Brutal</button>
+                
+                <button class="neo-btn btn-with-icon" style="justify-content: center;">
+                    Acción Brutal
+                    <!-- Icono de flecha gruesa -->
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
             </section>
         </div>
     </main>
