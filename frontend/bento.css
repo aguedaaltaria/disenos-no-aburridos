@@ -1,0 +1,225 @@
+:root {
+    --bg-bento: #090d16;         /* Fondo azul muy oscuro y tecnológico */
+    --bento-card: #111827;       /* Gris pizarra oscuro para los compartimentos */
+    --bento-card-hover: #1f2937;
+    --bento-border: rgba(255, 255, 255, 0.08);
+    --bento-border-hover: rgba(255, 255, 255, 0.2);
+    --primary-bento: #6366f1;    /* Índigo moderno */
+    --accent-bento: #f43f5e;     /* Rosa coral brillante */
+    --text-main: #f9fafb;
+    --text-muted: #9ca3af;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-bento);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.bento-wrapper {
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Botón de regreso */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    background: var(--bento-card);
+    border: 1px solid var(--bento-border);
+    color: var(--text-main);
+    font-weight: 700;
+    padding: 0.6rem 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.btn-back:hover {
+    background: var(--bento-card-hover);
+    border-color: var(--primary-bento);
+    transform: translateX(-4px);
+}
+
+/* Encabezado Bento */
+.bento-header {
+    margin-bottom: 2rem;
+}
+
+.bento-header h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-bento), var(--accent-bento));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bento-header p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* 
+  REGLA CLAVE BENTO UI:
+  Grid modular asimétrico con auto-fit y áreas específicas para cada celda.
+*/
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(160px, auto);
+    gap: 1.5rem;
+}
+
+/* Celda base de la caja bento */
+.bento-cell {
+    background-color: var(--bento-card);
+    border: 1px solid var(--bento-border);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.bento-cell:hover {
+    border-color: var(--bento-border-hover);
+    background-color: var(--bento-card-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Tamaños específicos para simular la distribución de una caja Bento */
+.cell-large {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), var(--bento-card));
+}
+
+.cell-wide {
+    grid-column: span 2;
+}
+
+.cell-tall {
+    grid-row: span 2;
+}
+
+/* Componentes internos dentro de las celdas */
+.bento-title {
+    font-size: 1.25rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.bento-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Formulario y Botones Bento */
+.bento-input {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    font-family: inherit;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--bento-border);
+    border-radius: 12px;
+    color: var(--text-main);
+    outline: none;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.bento-input:focus {
+    border-color: var(--primary-bento);
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+}
+
+.bento-btn {
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: var(--primary-bento);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.bento-btn:hover {
+    background: #4f46e5;
+    transform: scale(1.02);
+}
+
+/* Galería de Iconos integrada en una celda Bento ancha */
+.icon-grid-bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.icon-box {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--bento-border);
+    border-radius: 12px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.icon-box:hover {
+    color: var(--text-main);
+    border-color: var(--primary-bento);
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.icon-box svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: var(--primary-bento);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Responsividad para pantallas medianas o pequeñas */
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .cell-large, .cell-wide, .cell-tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .icon-grid-bento {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
