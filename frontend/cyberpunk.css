@@ -1,0 +1,214 @@
+:root {
+    --bg-cyber: #05050a;          /* Negro casi absoluto, estilo callejón nocturno */
+    --surface-cyber: #0f101a;     /* Panel de control oscuro */
+    --border-cyber: #ff0055;      /* Magenta neón principal para bordes activos */
+    --neon-cyan: #00f0ff;         /* Cian eléctrico secundario */
+    --neon-pink: #ff0055;         /* Magenta / Rosa neón agresivo */
+    --neon-yellow: #fbee00;       /* Amarillo advertencia */
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-cyber);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    /* Patrón de líneas de escaneo (Scanlines) muy sutil para dar ambiente de monitor retro/futurista */
+    background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                      linear-gradient(90deg, rgba(255, 0, 85, 0.03), rgba(0, 240, 255, 0.03));
+    background-size: 100% 4px, 6px 100%;
+}
+
+/* 
+  REGLA CLAVE CYBERPUNK:
+  Contenedores con cortes angulares, bordes en colores neón y sombras difuminadas 
+  masivas (`box-shadow`) que simulan tubos de gas neón encendidos.
+*/
+.cyber-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: var(--surface-cyber);
+    border: 2px solid var(--border-cyber);
+    border-radius: 4px; /* Esquinas ligeramente angulares o cuadradas */
+    padding: 2.5rem;
+    /* Doble sombra de neón: una cercana y otra expansiva */
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4),
+                0 0 30px rgba(255, 0, 85, 0.2),
+                inset 0 0 15px rgba(255, 0, 85, 0.15);
+    margin-top: 2rem;
+    position: relative;
+}
+
+/* Pequeño detalle estético tipo "etiqueta de sistema" en la esquina */
+.cyber-container::before {
+    content: "SYS.V8 // SEC_AUTH";
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--border-cyber);
+    color: var(--bg-cyber);
+    font-size: 0.7rem;
+    font-weight: 900;
+    padding: 2px 8px;
+    letter-spacing: 1px;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    background-color: var(--surface-cyber);
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    font-weight: 800;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3), inset 0 0 5px rgba(0, 240, 255, 0.2);
+    transition: all 0.2s ease;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-back:hover {
+    background-color: var(--neon-cyan);
+    color: var(--bg-cyber);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    /* Resplandor de texto en cian */
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.6),
+                 0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.cyber-card {
+    background-color: #0b0c14;
+    border: 2px solid var(--neon-cyan);
+    border-radius: 4px;
+    padding: 1.8rem;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.25),
+                inset 0 0 10px rgba(0, 240, 255, 0.1);
+    transition: all 0.2s ease;
+}
+
+.cyber-card:hover {
+    border-color: var(--neon-yellow);
+    box-shadow: 0 0 20px rgba(251, 238, 0, 0.5),
+                inset 0 0 15px rgba(251, 238, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.cyber-input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-family: inherit;
+    background-color: #030408;
+    border: 2px solid var(--text-muted);
+    border-radius: 4px;
+    color: var(--text-main);
+    outline: none;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+}
+
+.cyber-input:focus {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.cyber-btn {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.9rem 1.8rem;
+    border: 2px solid var(--border-cyber);
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--border-cyber);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.5);
+    transition: all 0.2s ease;
+}
+
+.cyber-btn:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: var(--bg-cyber);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+/* Galería de Iconos UI adaptada a Cyberpunk */
+.icon-showcase {
+    margin-top: 2.5rem;
+    border-top: 2px dashed rgba(255, 0, 85, 0.4);
+    padding-top: 1.5rem;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.icon-card {
+    background-color: #0b0c14;
+    border: 2px solid var(--text-muted);
+    border-radius: 4px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.icon-card:hover {
+    border-color: var(--neon-cyan);
+    color: var(--neon-cyan);
+    background-color: rgba(0, 240, 255, 0.05);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.icon-card svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+}
