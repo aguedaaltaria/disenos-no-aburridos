@@ -183,3 +183,52 @@ h1 {
 .glass-btn:hover svg {
     transform: translateX(4px); /* El icono de enviar se mueve hacia adelante */
 }
+
+/* Sección de galería de iconos para Glassmorphism */
+.icon-showcase {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 1.5rem;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.icon-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-light);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.icon-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Tamaño y trazo elegante para los iconos de cristal */
+.icon-card svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: var(--text-light);
+    stroke-width: 2; /* Trazo más fino y sofisticado acorde al vidrio */
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
