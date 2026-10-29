@@ -1,0 +1,177 @@
+:root {
+    --y2k-bg: #008080; /* Clásico verde teal de fondo de escritorio retro */
+    --y2k-silver: #c0c0c0;
+    --y2k-blue: #000080;
+    --y2k-blue-grad: #1084d0;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--y2k-bg);
+    color: #000000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Ventana estilo Windows 98 / Winamp */
+.y2k-window {
+    width: 100%;
+    max-width: 900px;
+    background: var(--y2k-silver);
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
+    padding: 6px;
+    margin-top: 2rem;
+}
+
+.y2k-titlebar {
+    background: linear-gradient(90deg, var(--y2k-blue), var(--y2k-blue-grad));
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.y2k-btn-close {
+    background: var(--y2k-silver);
+    color: black;
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #404040;
+    border-bottom: 1px solid #404040;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn-back {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--y2k-silver);
+    color: black;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    font-weight: bold;
+    padding: 6px 14px;
+    font-size: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.btn-back:active, .y2k-button:active {
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding: 7px 13px 5px 15px;
+}
+
+.y2k-content {
+    padding: 1rem;
+    background: var(--y2k-silver);
+    border-top: 1px solid #808080;
+    border-left: 1px solid #808080;
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.y2k-box {
+    background: #ffffff;
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding: 1.2rem;
+}
+
+.y2k-input {
+    width: 100%;
+    padding: 8px;
+    background: #ffffff;
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+    margin-bottom: 1rem;
+}
+
+.y2k-button {
+    background: var(--y2k-silver);
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    padding: 6px 16px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Galería de Iconos UI */
+.icon-showcase {
+    margin-top: 2rem;
+    border-top: 1px solid #808080;
+    padding-top: 1.5rem;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+}
+
+.icon-card {
+    background: var(--y2k-silver);
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.icon-card svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: #000000;
+    stroke-width: 2;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+}

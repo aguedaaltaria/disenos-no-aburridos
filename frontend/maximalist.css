@@ -1,0 +1,158 @@
+:root {
+    --max-bg: #ffe600; /* Amarillo eléctrico de fondo saturado */
+    --max-pink: #ff0055;
+    --max-cyan: #00ffff;
+    --max-black: #000000;
+}
+
+body {
+    font-family: 'Impact', sans-serif;
+    background-color: var(--max-bg);
+    color: var(--max-black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    overflow-x: hidden;
+    background-image: repeating-linear-gradient(45deg, #ffe600, #ffe600 20px, #ffd000 20px, #ffd000 40px);
+}
+
+.max-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border: 6px solid var(--max-black);
+    box-shadow: 15px 15px 0px var(--max-pink);
+    padding: 3rem;
+    margin-top: 2rem;
+    transform: rotate(1deg); /* Rotación intencional caótica */
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    background-color: var(--max-cyan);
+    color: var(--max-black);
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding: 0.8rem 1.8rem;
+    border: 4px solid var(--max-black);
+    box-shadow: 6px 6px 0px var(--max-black);
+    transform: rotate(-2deg);
+    transition: transform 0.1s;
+    margin-bottom: 2rem;
+}
+
+.btn-back:hover {
+    transform: rotate(2deg) scale(1.05);
+}
+
+.max-badge {
+    background-color: var(--max-pink);
+    color: #ffff00;
+    font-size: 2.2rem;
+    padding: 1rem 2rem;
+    transform: rotate(-3deg);
+    border: 4px dashed var(--max-black);
+    box-shadow: 10px 10px 0px var(--max-cyan);
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.max-card {
+    background-color: var(--max-cyan);
+    border: 4px solid var(--max-black);
+    box-shadow: 8px 8px 0px var(--max-black);
+    padding: 1.8rem;
+    transform: rotate(2deg);
+}
+
+.max-input {
+    width: 100%;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 1.2rem;
+    background-color: #ffffff;
+    border: 4px solid var(--max-black);
+    box-shadow: 5px 5px 0px var(--max-black);
+    outline: none;
+    margin-bottom: 1rem;
+}
+
+.max-btn {
+    font-family: inherit;
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    background-color: var(--max-pink);
+    color: #ffffff;
+    border: 4px solid var(--max-black);
+    box-shadow: 8px 8px 0px var(--max-black);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transform: rotate(-1deg);
+    transition: transform 0.1s;
+}
+
+.max-btn:hover {
+    transform: rotate(2deg) scale(1.03);
+}
+
+/* Galería de Iconos UI */
+.icon-showcase {
+    margin-top: 3rem;
+    border-top: 4px solid var(--max-black);
+    padding-top: 1.5rem;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.icon-card {
+    background-color: #ffffff;
+    border: 3px solid var(--max-black);
+    box-shadow: 5px 5px 0px var(--max-pink);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 900;
+    transform: rotate(1deg);
+    transition: transform 0.1s;
+}
+
+.icon-card:hover {
+    transform: rotate(-2deg) scale(1.05);
+    background-color: var(--max-cyan);
+}
+
+.icon-card svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: var(--max-black);
+    stroke-width: 3;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+}
