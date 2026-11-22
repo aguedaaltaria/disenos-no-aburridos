@@ -1,0 +1,190 @@
+:root {
+  --papel-boceto: #fffdf7;
+  --tinta-grafito: #1c1917;
+  --marcador-amarillo: #fde047;
+  --marcador-coral: #fb7185;
+  --linea-cuaderno: rgba(28, 25, 23, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+  color: var(--tinta-grafito);
+  background-color: var(--papel-boceto);
+  background-image:
+    linear-gradient(var(--linea-cuaderno) 1px, transparent 1px),
+    linear-gradient(90deg, var(--linea-cuaderno) 1px, transparent 1px);
+  background-size: 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.barra-superior {
+  width: 100%;
+  max-width: 920px;
+  margin-bottom: 1.5rem;
+}
+
+.boton-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--tinta-grafito);
+  background-color: #ffffff;
+  border: 2px solid var(--tinta-grafito);
+  border-radius: 190px 25px 210px 20px / 22px 195px 18px 205px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  box-shadow: 3px 4px 0px rgba(28, 25, 23, 0.2);
+  transition: transform 0.15s ease;
+}
+
+.boton-volver:hover {
+  transform: rotate(-1.5deg) translateY(-2px);
+}
+
+.hoja-boceto {
+  width: 100%;
+  max-width: 920px;
+  background-color: var(--papel-boceto);
+  border: 2px solid var(--tinta-grafito);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  padding: 2.5rem;
+  box-shadow: 6px 8px 0px rgba(28, 25, 23, 0.18);
+}
+
+.titulo-boceto {
+  margin: 0 0 0.75rem 0;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  display: inline-block;
+  background: linear-gradient(transparent 60%, var(--marcador-amarillo) 60%);
+  padding-right: 0.5rem;
+}
+
+.descripcion-boceto {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.rejilla-componentes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.tarjeta-boceto {
+  background-color: #ffffff;
+  color: var(--tinta-grafito);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  border: 2px solid var(--tinta-grafito);
+  padding: 1.5rem 2rem;
+  box-shadow: 4px 5px 0px rgba(28, 25, 23, 0.18);
+  transform: rotate(-0.8deg);
+}
+
+.tarjeta-boceto h2 {
+  margin-top: 0;
+  font-size: 1.35rem;
+}
+
+.formulario-boceto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.entrada-boceto {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--tinta-grafito);
+  background-color: #ffffff;
+  border: 2px solid var(--tinta-grafito);
+  border-radius: 20px 230px 25px 215px / 220px 18px 225px 20px;
+  outline: none;
+}
+
+.entrada-boceto:focus {
+  border-color: var(--marcador-coral);
+  box-shadow: 3px 3px 0px rgba(251, 113, 133, 0.35);
+}
+
+.boton-boceto {
+  background-color: var(--marcador-amarillo);
+  color: var(--tinta-grafito);
+  border: 2px solid var(--tinta-grafito);
+  border-radius: 185px 25px 195px 20px / 20px 185px 25px 195px;
+  padding: 0.75rem 1.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 3px 4px 0px var(--tinta-grafito);
+  transition: transform 0.15s ease;
+}
+
+.boton-boceto:hover {
+  transform: rotate(-1.5deg) scale(1.03);
+}
+
+.seccion-iconos {
+  border-top: 2px dashed var(--tinta-grafito);
+  padding-top: 1.75rem;
+}
+
+.seccion-iconos h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+}
+
+.galeria-iconos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 1rem;
+}
+
+.ficha-icono {
+  background-color: #ffffff;
+  border: 2px solid var(--tinta-grafito);
+  border-radius: 22px 190px 25px 210px / 205px 24px 195px 18px;
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.ficha-icono:hover {
+  transform: rotate(1.5deg) translateY(-2px);
+  background-color: var(--marcador-amarillo);
+}
+
+.ficha-icono svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: var(--tinta-grafito);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
