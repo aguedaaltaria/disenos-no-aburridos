@@ -1,8 +1,13 @@
 :root {
     --bg-swiss: #f9fafb;
     --text-swiss: #111827;
-    --accent-swiss: #dc2626; /* Rojo suizo de alto impacto */
+    --accent-swiss: #dc2626;
     --gray-swiss: #e5e7eb;
+    --escala-titulo-suizo: clamp(2.5rem, 5vw, 5rem);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -14,6 +19,12 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 3rem 2rem;
+    margin: 0;
+}
+
+.barra-superior-suiza {
+    width: 100%;
+    max-width: 900px;
 }
 
 .swiss-container {
@@ -22,7 +33,35 @@ body {
     background: #ffffff;
     border: 1px solid var(--text-swiss);
     padding: 3rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+}
+
+.encabezado-editorial-suizo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.marca-roja-suiza {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-swiss);
+}
+
+.marca-roja-suiza::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-swiss);
+    display: inline-block;
 }
 
 .btn-back {
@@ -35,8 +74,7 @@ body {
     font-size: 0.9rem;
     border-bottom: 2px solid var(--text-swiss);
     padding-bottom: 2px;
-    transition: color 0.2s;
-    margin-bottom: 2rem;
+    transition: color 0.2s, border-color 0.2s;
 }
 
 .btn-back:hover {
@@ -45,12 +83,13 @@ body {
 }
 
 .swiss-title {
-    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-size: var(--escala-titulo-suizo);
     font-weight: 900;
     line-height: 0.95;
     letter-spacing: -0.04em;
-    margin-bottom: 1.5rem;
+    margin: 0 0 1.5rem 0;
     text-transform: uppercase;
+    transition: font-size 0.25s ease;
 }
 
 .swiss-divider {
@@ -63,7 +102,7 @@ body {
 .components-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
     margin-top: 2rem;
 }
 
@@ -83,30 +122,44 @@ body {
     color: var(--text-swiss);
     outline: none;
     margin-bottom: 1.5rem;
+    transition: border-color 0.2s ease;
 }
 
 .swiss-input::placeholder {
     color: #9ca3af;
 }
 
-.swiss-btn {
+.swiss-input:focus {
+    border-bottom-color: var(--accent-swiss);
+}
+
+.swiss-btn,
+.boton-escala-suiza {
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 800;
     text-transform: uppercase;
-    padding: 1rem 2rem;
+    letter-spacing: 0.04em;
+    padding: 0.95rem 1.85rem;
     background: var(--text-swiss);
     color: #ffffff;
     border: none;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-    transition: background 0.2s;
+    transition: background 0.2s ease, transform 0.12s ease;
 }
 
-.swiss-btn:hover {
+.swiss-btn:hover,
+.boton-escala-suiza:hover {
     background: var(--accent-swiss);
+}
+
+.swiss-btn:active,
+.boton-escala-suiza:active {
+    transform: translateY(1px);
 }
 
 /* Galería de Iconos UI */
@@ -118,7 +171,7 @@ body {
 
 .icon-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -132,19 +185,140 @@ body {
     gap: 0.5rem;
     font-size: 0.8rem;
     font-weight: 700;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .icon-card:hover {
     border-color: var(--text-swiss);
+    color: var(--accent-swiss);
 }
 
 .icon-card svg {
     width: 24px;
     height: 24px;
     fill: none;
-    stroke: var(--text-swiss);
+    stroke: currentColor;
     stroke-width: 2;
     stroke-linecap: square;
     stroke-linejoin: miter;
+}
+
+/* Sección guía inferior e interactiva */
+.guia-diferenciacion-suiza {
+    margin-top: 3rem;
+    border-top: 2px solid var(--text-swiss);
+    padding-top: 2rem;
+}
+
+.guia-encabezado-suiza {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.guia-encabezado-suiza h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.pista-lectura-suiza {
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-swiss);
+    border-bottom: 2px solid var(--accent-swiss);
+    padding-bottom: 2px;
+}
+
+.rejilla-guia-suiza {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.tarjeta-rasgo-suiza {
+    border-top: 2px solid var(--text-swiss);
+    padding-top: 1.15rem;
+}
+
+.tarjeta-rasgo-suiza h3 {
+    margin: 0 0 0.85rem 0;
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.lista-puntos-suiza {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.lista-puntos-suiza li {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #374151;
+}
+
+.etiqueta-comparativa-suiza {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.1rem 0.45rem;
+    border: 1px solid var(--text-swiss);
+    margin-right: 0.35rem;
+    color: var(--text-swiss);
+}
+
+.etiqueta-comparativa-suiza.rojo {
+    border-color: var(--accent-swiss);
+    color: var(--accent-swiss);
+}
+
+/* Banco interactivo de escala tipográfica */
+.banco-pruebas-suiza {
+    margin-top: 2rem;
+    border-top: 2px solid var(--text-swiss);
+    border-bottom: 1px solid var(--gray-swiss);
+    padding: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+.controles-escala-suiza {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.boton-escala-suiza.secundario {
+    background: transparent;
+    color: var(--text-swiss);
+    border: 1px solid var(--text-swiss);
+}
+
+.boton-escala-suiza.secundario:hover {
+    background: var(--text-swiss);
+    color: #ffffff;
+}
+
+.boton-escala-suiza.activo {
+    background: var(--accent-swiss);
+    color: #ffffff;
 }

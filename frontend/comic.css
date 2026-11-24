@@ -1,0 +1,379 @@
+:root {
+  --tinta-comic: #111111;
+  --coral-comic: #ff6b6b;
+  --turquesa-comic: #4ecdc4;
+  --amarillo-comic: #ffe66d;
+  --papel-comic: #fff9ec;
+  --opacidad-halftone: 0.22;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+  font-family: 'Nunito', 'Trebuchet MS', sans-serif;
+  color: var(--tinta-comic);
+  background-color: var(--amarillo-comic);
+  background-image: radial-gradient(rgba(17, 17, 17, 0.14) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.barra-superior {
+  width: 100%;
+  max-width: 920px;
+  margin-bottom: 1.5rem;
+}
+
+.boton-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--tinta-comic);
+  background-color: var(--papel-comic);
+  border: 3px solid var(--tinta-comic);
+  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0px var(--tinta-comic);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.boton-volver:hover {
+  background-color: var(--turquesa-comic);
+}
+
+.boton-volver:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px var(--tinta-comic);
+}
+
+.vineta-principal {
+  width: 100%;
+  max-width: 920px;
+  background-color: var(--papel-comic);
+  border: 4px solid var(--tinta-comic);
+  border-radius: 6px;
+  padding: 2.5rem;
+  box-shadow: 10px 10px 0px var(--tinta-comic);
+  position: relative;
+  overflow: hidden;
+}
+
+.etiqueta-capitulo {
+  display: inline-block;
+  background-color: var(--tinta-comic);
+  color: var(--amarillo-comic);
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.7rem;
+  margin-bottom: 0.75rem;
+}
+
+.titulo-comic {
+  margin: 0 0 0.75rem 0;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.descripcion-comic {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  max-width: 72ch;
+}
+
+.rejilla-componentes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.panel-comic {
+  background-color: var(--coral-comic);
+  color: var(--tinta-comic);
+  border: 3px solid var(--tinta-comic);
+  border-radius: 6px;
+  padding: 1.75rem;
+  box-shadow: 7px 7px 0px var(--tinta-comic);
+  position: relative;
+  overflow: hidden;
+}
+
+.panel-comic h2 {
+  margin: 0 0 0.6rem 0;
+  font-size: 1.4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.panel-comic p {
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+
+.globo-onomatopeya {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  background-color: var(--amarillo-comic);
+  color: var(--tinta-comic);
+  border: 2.5px solid var(--tinta-comic);
+  box-shadow: 3px 3px 0px var(--tinta-comic);
+  padding: 0.25rem 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  transform: rotate(-2.5deg);
+}
+
+.trama-halftone {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--tinta-comic) 1.6px, transparent 1.6px);
+  background-size: 10px 10px;
+  opacity: var(--opacidad-halftone);
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.formulario-comic {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.entrada-comic {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--tinta-comic);
+  background-color: #ffffff;
+  border: 3px solid var(--tinta-comic);
+  border-radius: 4px;
+  box-shadow: 4px 4px 0px var(--tinta-comic);
+  outline: none;
+}
+
+.entrada-comic:focus {
+  background-color: #f0fdfa;
+}
+
+.boton-comic {
+  background-color: var(--turquesa-comic);
+  color: var(--tinta-comic);
+  border: 3px solid var(--tinta-comic);
+  border-radius: 4px;
+  padding: 0.8rem 1.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  box-shadow: 5px 5px 0px var(--tinta-comic);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+}
+
+.boton-comic:hover {
+  background-color: var(--amarillo-comic);
+}
+
+.boton-comic:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0px var(--tinta-comic);
+}
+
+.boton-comic.coral {
+  background-color: var(--coral-comic);
+}
+
+.seccion-iconos {
+  border-top: 3px solid var(--tinta-comic);
+  padding-top: 1.75rem;
+}
+
+.seccion-iconos h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.galeria-iconos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 1rem;
+}
+
+.ficha-icono {
+  background-color: #ffffff;
+  border: 3px solid var(--tinta-comic);
+  border-radius: 4px;
+  box-shadow: 4px 4px 0px var(--tinta-comic);
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.ficha-icono:hover {
+  background-color: var(--turquesa-comic);
+  transform: translate(-2px, -2px);
+}
+
+.ficha-icono svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: var(--tinta-comic);
+  stroke-width: 2.5;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+/* Sección guía inferior e interactiva */
+.guia-diferenciacion-comic {
+  margin-top: 2.5rem;
+  border-top: 3px solid var(--tinta-comic);
+  padding-top: 1.75rem;
+}
+
+.guia-encabezado-comic {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.guia-encabezado-comic h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.pista-lectura-comic {
+  background-color: var(--amarillo-comic);
+  border: 2.5px solid var(--tinta-comic);
+  box-shadow: 3px 3px 0px var(--tinta-comic);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.rejilla-guia-comic {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjeta-rasgo-comic {
+  background-color: #ffffff;
+  border: 3px solid var(--tinta-comic);
+  box-shadow: 5px 5px 0px var(--tinta-comic);
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+
+.tarjeta-rasgo-comic h3 {
+  margin: 0 0 0.8rem 0;
+  font-size: 1.05rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--tinta-comic);
+}
+
+.lista-puntos-comic {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.lista-puntos-comic li {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.etiqueta-comparativa-comic {
+  display: inline-block;
+  background-color: var(--amarillo-comic);
+  border: 2px solid var(--tinta-comic);
+  font-size: 0.73rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 0.08rem 0.45rem;
+  margin-right: 0.35rem;
+}
+
+.etiqueta-comparativa-comic.turquesa {
+  background-color: var(--turquesa-comic);
+}
+
+.banco-pruebas-comic {
+  margin-top: 1.5rem;
+  background-color: var(--amarillo-comic);
+  border: 3px solid var(--tinta-comic);
+  box-shadow: 6px 6px 0px var(--tinta-comic);
+  border-radius: 4px;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.controles-trama-comic {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.lista-dialogos-comic {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+}

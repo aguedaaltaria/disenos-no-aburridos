@@ -1,16 +1,22 @@
 :root {
-    --bg-aurora: #090d16;         /* Fondo azul/negro ligeramente más vivo */
-    --surface-aurora: rgba(17, 24, 39, 0.45); /* Contenedor más translúcido para dejar pasar la luz */
-    --border-aurora: rgba(255, 255, 255, 0.2);
-    --aurora-1: #00f2fe;          /* Cian neón muy brillante */
-    --aurora-2: #4facfe;          /* Azul celeste eléctrico */
-    --aurora-3: #a855f7;          /* Púrpura intenso */
-    --aurora-4: #10b981;          /* Esmeralda aurora */
+    --bg-aurora: #070b14;
+    --surface-aurora: rgba(15, 23, 42, 0.52);
+    --border-aurora: rgba(255, 255, 255, 0.16);
+    --aurora-1: #00f2fe;
+    --aurora-2: #4facfe;
+    --aurora-3: #a855f7;
+    --aurora-4: #10b981;
+    --intensidad-aurora: 0.85;
     --text-main: #f9fafb;
     --text-muted: #cbd5e1;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
+    margin: 0;
     font-family: 'Nunito', sans-serif;
     background-color: var(--bg-aurora);
     color: var(--text-main);
@@ -24,73 +30,89 @@ body {
 }
 
 /* 
-  AURORA MEJORADA:
-  Aumentamos el tamaño, la opacidad y añadimos más puntos de luz con movimiento 
-  para que el cielo se sienta completamente iluminado por los gradientes.
+  ATMOSFERA AURORA UI:
+  Grandes masas de luz muy difuminadas (blur amplio) que bañan el fondo
+  como cortinas o nubes de aurora boreal, sin bordes definidos.
 */
 .aurora-glow {
-    position: absolute;
-    width: 700px;
-    height: 700px;
+    position: fixed;
+    width: 720px;
+    height: 720px;
     border-radius: 50%;
-    filter: blur(80px);
+    filter: blur(95px);
     z-index: -1;
-    opacity: 0.85; /* Mucho más visible e intensa */
-    animation: auroraDance 12s ease infinite alternate;
+    opacity: var(--intensidad-aurora);
+    pointer-events: none;
+    transition: opacity 0.35s ease, background 0.5s ease;
+    animation: auroraDance 13s ease-in-out infinite alternate;
 }
 
 .glow-1 {
     background: var(--aurora-1);
-    top: -150px;
-    left: -100px;
+    top: -160px;
+    left: -120px;
 }
 
 .glow-2 {
     background: var(--aurora-2);
-    top: 20%;
-    right: -150px;
+    top: 18%;
+    right: -160px;
     animation-delay: -4s;
 }
 
 .glow-3 {
     background: var(--aurora-3);
-    bottom: -100px;
-    left: 10%;
+    bottom: -140px;
+    left: 12%;
     animation-delay: -8s;
 }
 
 .glow-4 {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    filter: blur(90px);
-    z-index: -1;
+    width: 540px;
+    height: 540px;
     background: var(--aurora-4);
-    bottom: 20%;
+    bottom: 18%;
     right: 10%;
-    opacity: 0.6;
-    animation: auroraDance 10s ease infinite alternate-reverse;
+    opacity: calc(var(--intensidad-aurora) * 0.72);
+    animation-delay: -2s;
 }
 
 @keyframes auroraDance {
     0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-    50% { transform: translate(60px, 80px) scale(1.15) rotate(15deg); }
-    100% { transform: translate(-50px, 40px) scale(0.9) rotate(-15deg); }
+    50% { transform: translate(55px, 70px) scale(1.14) rotate(12deg); }
+    100% { transform: translate(-45px, 35px) scale(0.92) rotate(-12deg); }
 }
 
-/* Contenedor principal translúcido con brillo de borde */
+.barra-superior-aurora {
+    width: 100%;
+    max-width: 900px;
+}
+
 .aurora-container {
     width: 100%;
     max-width: 900px;
     background: var(--surface-aurora);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
     border: 1px solid var(--border-aurora);
     border-radius: 28px;
     padding: 2.5rem;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    margin-top: 2rem;
+    box-shadow: 0 30px 65px rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    margin-top: 1.5rem;
+}
+
+.etiqueta-polar {
+    display: inline-block;
+    background: rgba(0, 242, 254, 0.12);
+    border: 1px solid rgba(0, 242, 254, 0.35);
+    color: var(--aurora-1);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
 }
 
 .btn-back {
@@ -105,22 +127,21 @@ body {
     font-weight: 700;
     padding: 0.6rem 1.5rem;
     border-radius: 14px;
-    transition: all 0.3s ease;
-    margin-bottom: 2rem;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.25s ease;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .btn-back:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.14);
     border-color: var(--aurora-1);
     transform: translateX(-4px);
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: clamp(2.2rem, 4.5vw, 3rem);
     font-weight: 900;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--aurora-1), var(--aurora-3));
+    margin: 0 0 1rem 0;
+    background: linear-gradient(135deg, var(--aurora-1), var(--aurora-4), var(--aurora-3));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -138,40 +159,45 @@ h1 {
     border-radius: 20px;
     padding: 1.8rem;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
 
 .aurora-card:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.09);
     border-color: var(--aurora-1);
     transform: translateY(-4px);
-    box-shadow: 0 12px 35px rgba(0, 242, 254, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 14px 35px rgba(0, 242, 254, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .aurora-input {
     width: 100%;
     padding: 1rem 1.2rem;
     font-family: inherit;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.35);
     border: 1px solid var(--border-aurora);
     border-radius: 14px;
     color: var(--text-main);
     outline: none;
     margin-bottom: 1rem;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
+}
+
+.aurora-input::placeholder {
+    color: rgba(203, 213, 225, 0.55);
 }
 
 .aurora-input:focus {
     border-color: var(--aurora-1);
-    box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.35);
     background: rgba(0, 0, 0, 0.5);
 }
 
-.aurora-btn {
+.aurora-btn,
+.boton-clima-aurora {
     font-family: inherit;
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 0.9rem 1.8rem;
+    font-size: 0.98rem;
+    font-weight: 800;
+    padding: 0.85rem 1.65rem;
     border: none;
     border-radius: 14px;
     cursor: pointer;
@@ -181,16 +207,21 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 25px rgba(0, 242, 254, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 25px rgba(0, 242, 254, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-.aurora-btn:hover {
+.aurora-btn:hover,
+.boton-clima-aurora:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 242, 254, 0.6);
+    box-shadow: 0 8px 30px rgba(0, 242, 254, 0.55);
 }
 
-/* Galería de Iconos UI */
+.aurora-btn:active,
+.boton-clima-aurora:active {
+    transform: scale(0.98);
+}
+
 .icon-showcase {
     margin-top: 2.5rem;
     border-top: 1px solid var(--border-aurora);
@@ -217,11 +248,11 @@ h1 {
     font-weight: 700;
     color: var(--text-muted);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
 
 .icon-card:hover {
-    background: rgba(0, 242, 254, 0.15);
+    background: rgba(0, 242, 254, 0.14);
     border-color: var(--aurora-1);
     color: var(--text-main);
     transform: translateY(-3px);
@@ -235,4 +266,131 @@ h1 {
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
+
+/* Sección guía inferior e interactiva */
+.guia-diferenciacion-aurora {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--border-aurora);
+    padding-top: 1.75rem;
+}
+
+.guia-encabezado-aurora {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.guia-encabezado-aurora h2 {
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: var(--aurora-1);
+}
+
+.pista-lectura-aurora {
+    background: rgba(168, 85, 247, 0.16);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    color: #e9d5ff;
+    border-radius: 999px;
+    padding: 0.25rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.rejilla-guia-aurora {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+    gap: 1.5rem;
+}
+
+.tarjeta-rasgo-aurora {
+    background: rgba(7, 11, 20, 0.45);
+    border: 1px solid var(--border-aurora);
+    border-radius: 20px;
+    padding: 1.35rem;
+}
+
+.tarjeta-rasgo-aurora h3 {
+    margin: 0 0 0.85rem 0;
+    font-size: 1.05rem;
+    font-weight: 900;
+    color: var(--text-main);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-aurora);
+}
+
+.lista-puntos-aurora {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.lista-puntos-aurora li {
+    font-size: 0.92rem;
+    line-height: 1.48;
+    color: var(--text-muted);
+}
+
+.etiqueta-comparativa-aurora {
+    display: inline-block;
+    background: rgba(0, 242, 254, 0.14);
+    color: #a5f3fc;
+    border: 1px solid rgba(0, 242, 254, 0.35);
+    border-radius: 8px;
+    font-size: 0.74rem;
+    font-weight: 800;
+    padding: 0.1rem 0.5rem;
+    margin-right: 0.35rem;
+}
+
+.etiqueta-comparativa-aurora.contraste-purpura {
+    background: rgba(168, 85, 247, 0.18);
+    color: #f3e8ff;
+    border-color: rgba(168, 85, 247, 0.4);
+}
+
+/* Banco interactivo de atmósfera polar */
+.banco-pruebas-aurora {
+    margin-top: 1.5rem;
+    background: rgba(7, 11, 20, 0.55);
+    border: 1px solid var(--border-aurora);
+    border-radius: 20px;
+    padding: 1.35rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.controles-atmosfera-aurora {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+.boton-clima-aurora.secundario {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-aurora);
+    color: var(--text-main);
+    box-shadow: none;
+}
+
+.boton-clima-aurora.secundario:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: var(--aurora-1);
+    box-shadow: none;
+}
+
+.boton-clima-aurora.activo {
+    background: linear-gradient(135deg, var(--aurora-4), var(--aurora-1));
+    color: #030712;
+    border-color: transparent;
 }

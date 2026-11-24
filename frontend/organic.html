@@ -4,93 +4,202 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diseño Orgánico - Modern UI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="organic.css">
 </head>
 <body>
 
-    <!-- Formas orgánicas fluidas de fondo (Blobs) -->
-    <div class="organic-blob blob-1"></div>
-    <div class="organic-blob blob-2"></div>
+    <!-- Formas orgánicas fluidas de fondo -->
+    <div class="forma-organica-fondo forma-salvia"></div>
+    <div class="forma-organica-fondo forma-terracota"></div>
 
-    <a href="/" class="btn-back">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Volver al Hub
-    </a>
+    <div class="barra-superior-organic">
+        <a href="/" class="btn-back">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Volver al Hub
+        </a>
+    </div>
 
     <main class="organic-container">
+        <span class="etiqueta-botanica">BIOMORPHIC FLOW // RADIOS ASIMÉTRICOS</span>
         <h1>Diseño Orgánico</h1>
-        <p style="font-size: 1.2rem; font-weight: 700; opacity: 0.9;">
-            Formas fluidas, bordes asimétricos y colores inspirados en la naturaleza. Rompe la rigidez geométrica con suavidad y movimiento.
+        <p style="font-size: 1.15rem; font-weight: 700; color: var(--texto-suave); margin: 0;">
+            Formas fluidas, curvas asimétricas de 8 ejes y tonos botánicos cálidos. Reemplaza los ángulos rectos por siluetas vivas que cambian suavemente al interactuar.
         </p>
 
+        <!-- Onda SVG divisoria para romper la línea recta tradicional -->
+        <svg class="onda-separadora" viewBox="0 0 800 24" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,12 Q100,2 200,12 T400,12 T600,12 T800,12" fill="none" stroke="rgba(167, 243, 208, 0.28)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+
         <div class="components-grid">
-            <!-- Componente: Tarjeta -->
             <article class="organic-card">
                 <h2>Tarjeta Fluida</h2>
-                <p>Los radios de borde asimétricos y las formas orgánicas transmiten cercanía, dinamismo y un diseño más humano y natural.</p>
+                <p>En lugar de bordes uniformes (<code>border-radius: 16px</code>), combina radios independientes en cada esquina para evitar cajas rígidas.</p>
+                <span class="pildora-natural">Silueta viva en hover</span>
             </article>
 
-            <!-- Componente: Formulario -->
             <section style="display: flex; flex-direction: column; justify-content: center;">
                 <input type="text" class="organic-input" placeholder="Escribe tu correo..." />
                 
-                <button class="organic-btn">
-                    <span>Explorar</span>
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <button type="button" class="organic-btn">
+                    <span>Explorar Naturaleza</span>
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
             </section>
         </div>
 
-        <!-- Galería de Iconos UI -->
         <section class="icon-showcase">
-            <h2 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 0.5rem;">Biblioteca de Iconos UI</h2>
-            <p style="font-size: 0.95rem; opacity: 0.8; margin-bottom: 1rem;">Iconos con trazos fluidos y redondeados en sintonía con la naturaleza.</p>
+            <h2 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 0.5rem; color: var(--arena-suave);">Biblioteca de Iconos UI</h2>
+            <p style="font-size: 0.95rem; color: var(--texto-suave); margin-bottom: 1rem;">Contenedores tipo piedra de río con trazos redondeados y suaves.</p>
             
             <div class="icon-grid">
-                <!-- Search -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                     Search
                 </div>
-                <!-- Home -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                     Home
                 </div>
-                <!-- Settings -->
                 <div class="icon-card">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
                     Settings
                 </div>
-                <!-- Favorite -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     Favorite
                 </div>
-                <!-- Delete -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
                     Delete
                 </div>
-                <!-- Star -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     Star
                 </div>
-                <!-- Check Circle -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                     Check
                 </div>
-                <!-- Close -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                     Close
                 </div>
             </div>
         </section>
+
+        <section class="guia-diferenciacion-organic" aria-label="Características y diferencias del Diseño Orgánico">
+            <div class="guia-encabezado-organic">
+                <h2>Características y Diferencias</h2>
+                <span class="pista-lectura-organic">Guía biomórfica + mutación en vivo</span>
+            </div>
+
+            <div class="rejilla-guia-organic">
+                <article class="tarjeta-rasgo-organic">
+                    <h3>Rasgos Esenciales</h3>
+                    <ul class="lista-puntos-organic">
+                        <li>
+                            <span class="etiqueta-comparativa-organic">Curvas</span>
+                            Uso de <code>border-radius</code> asimétricos en 8 ejes para imitar hojas, piedras y gotas.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-organic">Divisores</span>
+                            Ondas fluidas SVG (<code>&lt;path&gt;</code>) en lugar de líneas rectas horizontales cortantes.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-organic">Paleta</span>
+                            Tonos naturales y cálidos (salvia, musgo, arena y terracota) que transmiten calma.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-organic">Movimiento</span>
+                            Transiciones elásticas donde los bordes cambian su silueta al pasar el cursor o pulsar.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta-rasgo-organic">
+                    <h3>Cómo No Confundirlo</h3>
+                    <ul class="lista-puntos-organic">
+                        <li>
+                            <span class="etiqueta-comparativa-organic contraste-tierra">Vs. Glassmorphism</span>
+                            No depende de tarjetas de vidrio translúcido ni reflejos ópticos afilados; usa superficies cálidas y siluetas amorfas.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-organic">Vs. Aurora UI</span>
+                            Aurora es atmósfera luminosa sobre paneles rectos; el diseño orgánico moldea la forma física de cada bloque.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-organic contraste-tierra">Vs. Claymorphism</span>
+                            El Clay parece plastilina 3D inflada con sombras interiores gruesas; lo orgánico es fluido, plano y botánico.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-organic">Vs. Sketch</span>
+                            Aunque ambos rompen la geometría recta, Sketch imita trazo de lápiz irregular y el Orgánico busca curvas suaves y naturales.
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="banco-pruebas-organic">
+                <div>
+                    <h3 style="margin: 0 0 0.35rem 0; font-size: 1.05rem; font-weight: 900; color: var(--arena-suave);">
+                        Prueba la Morfología de un Blob
+                    </h3>
+                    <p style="margin: 0 0 0.85rem 0; font-size: 0.9rem; color: var(--texto-suave); line-height: 1.45;">
+                        Haz clic en la forma orgánica o en el botón para generar una nueva curvatura asimétrica de 8 valores.
+                    </p>
+                    <button type="button" id="botonMutarBlob" class="organic-btn" style="padding: 0.65rem 1.3rem; font-size: 0.9rem;">
+                        Mutar Silueta
+                    </button>
+                    <p id="codigoRadioActual" style="margin: 0.75rem 0 0 0; font-size: 0.8rem; color: var(--salvia-principal); font-weight: 700;">
+                        border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%
+                    </p>
+                </div>
+
+                <div class="lienzo-muestra-blob">
+                    <div id="blobInteractivo" class="blob-interactivo" title="Haz clic para mutar la forma">
+                        Tócame para mutar
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <script>
+        (function () {
+            const siluetasOrganicas = [
+                '62% 38% 46% 54% / 60% 44% 56% 40%',
+                '36% 64% 68% 32% / 44% 58% 42% 56%',
+                '72% 28% 34% 66% / 52% 68% 32% 48%',
+                '44% 56% 28% 72% / 66% 35% 65% 34%',
+                '55% 45% 62% 38% / 36% 64% 36% 64%'
+            ];
+
+            const blobElemento = document.getElementById('blobInteractivo');
+            const botonMutar = document.getElementById('botonMutarBlob');
+            const textoRadio = document.getElementById('codigoRadioActual');
+            let indiceActual = 0;
+
+            function aplicarNuevaSilueta() {
+                indiceActual = (indiceActual + 1) % siluetasOrganicas.length;
+                const nuevoRadio = siluetasOrganicas[indiceActual];
+                if (blobElemento) {
+                    blobElemento.style.borderRadius = nuevoRadio;
+                }
+                if (textoRadio) {
+                    textoRadio.textContent = `border-radius: ${nuevoRadio}`;
+                }
+            }
+
+            if (blobElemento) {
+                blobElemento.addEventListener('click', aplicarNuevaSilueta);
+            }
+            if (botonMutar) {
+                botonMutar.addEventListener('click', aplicarNuevaSilueta);
+            }
+        })();
+    </script>
 
 </body>
 </html>

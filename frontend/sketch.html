@@ -18,6 +18,7 @@
   </div>
 
   <main class="hoja-boceto">
+    <span class="etiqueta-cuaderno">CUADERNO DE TALLER // TRAZO MANUAL</span>
     <h1 class="titulo-boceto">Sketch / Hand-Drawn</h1>
     <p class="descripcion-boceto">
       Sensación de cuaderno de bocetos y taller creativo: bordes asimétricos trazados a mano alzada, papel cálido con cuadrícula y acentos de marcador.
@@ -32,8 +33,8 @@
       </article>
 
       <section class="formulario-boceto">
-        <input type="text" class="entrada-boceto" placeholder="Anota una idea rápida..." />
-        <button type="button" class="boton-boceto">
+        <input type="text" id="entradaIdeaSketch" class="entrada-boceto" placeholder="Anota una idea rápida..." />
+        <button type="button" id="botonGuardarSketch" class="boton-boceto">
           <span>Guardar Boceto</span>
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -79,7 +80,145 @@
         </div>
       </div>
     </section>
+
+    <section class="guia-diferenciacion-sketch" aria-label="Características y diferencias de Sketch / Hand-Drawn">
+      <div class="guia-encabezado-sketch">
+        <h2>Características y Diferencias</h2>
+        <span class="pista-lectura-sketch">Cuaderno // Trazo Libre</span>
+      </div>
+
+      <div class="rejilla-guia-sketch">
+        <article class="tarjeta-rasgo-sketch">
+          <h3>Rasgos Esenciales</h3>
+          <ul class="lista-puntos-sketch">
+            <li>
+              <span class="etiqueta-comparativa-sketch">Bordes</span>
+              <code>border-radius</code> asimétrico en 8 ejes para imitar líneas dibujadas a mano alzada.
+            </li>
+            <li>
+              <span class="etiqueta-comparativa-sketch">Papel</span>
+              Tono crema cálido con cuadrícula suave de libreta y subrayados tipo marcador.
+            </li>
+            <li>
+              <span class="etiqueta-comparativa-sketch">Microgiros</span>
+              Pequeñas rotaciones y desplazamientos al pasar el cursor que evocan taller creativo.
+            </li>
+            <li>
+              <span class="etiqueta-comparativa-sketch">Cercanía</span>
+              Transmite espontaneidad y borrador vivo frente a interfaces rígidas.
+            </li>
+          </ul>
+        </article>
+
+        <article class="tarjeta-rasgo-sketch">
+          <h3>Cómo No Confundirlo</h3>
+          <ul class="lista-puntos-sketch">
+            <li>
+              <span class="etiqueta-comparativa-sketch coral">Vs. Wireframe</span>
+              Wireframe es un esquema técnico/UX con líneas rectas y tipografía monoespaciada; Sketch imita trazo manual de libreta.
+            </li>
+            <li>
+              <span class="etiqueta-comparativa-sketch">Vs. Diseño Orgánico</span>
+              Lo orgánico usa curvas biomórficas suaves y tonos botánicos; Sketch simula tinta/grafito sobre papel de cuaderno.
+            </li>
+            <li>
+              <span class="etiqueta-comparativa-sketch coral">Vs. Comic / Halftone</span>
+              Comic se apoya en viñetas narrativas y tramas de puntos; Sketch se siente como borrador o nota suelta de taller.
+            </li>
+            <li>
+              <span class="etiqueta-comparativa-sketch">Vs. Blueprint</span>
+              Blueprint es un plano de ingeniería con cotas y azul cobalto; Sketch es un cuaderno creativo cálido.
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="banco-pruebas-sketch">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem;">
+          <div>
+            <h3 style="margin: 0 0 0.2rem 0; font-size: 1.02rem; font-weight: 800;">
+              Tipo de Papel y Notas Rápidas
+            </h3>
+            <p style="margin: 0; font-size: 0.86rem; color: #44403c;">
+              Cambia el rayado del fondo o agrega notas usando el campo superior.
+            </p>
+          </div>
+
+          <div class="controles-papel-sketch">
+            <button type="button" id="botonPapelCuadricula" class="boton-boceto" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Cuadrícula</button>
+            <button type="button" id="botonPapelPuntos" class="boton-boceto coral" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Punteado</button>
+            <button type="button" id="botonPapelLiso" class="boton-boceto" style="background-color: #ffffff; padding: 0.5rem 1rem; font-size: 0.85rem;">Liso</button>
+          </div>
+        </div>
+
+        <ul id="listaBocetosSketch" class="lista-bocetos-guardados">
+          <li>• Borrador inicial: bocetar estructura antes de definir colores finales.</li>
+        </ul>
+      </div>
+    </section>
   </main>
+
+  <script>
+    (function () {
+      const raiz = document.documentElement;
+      const botonCuadricula = document.getElementById('botonPapelCuadricula');
+      const botonPuntos = document.getElementById('botonPapelPuntos');
+      const botonLiso = document.getElementById('botonPapelLiso');
+      const entradaIdea = document.getElementById('entradaIdeaSketch');
+      const botonGuardar = document.getElementById('botonGuardarSketch');
+      const listaBocetos = document.getElementById('listaBocetosSketch');
+
+      if (botonCuadricula) {
+        botonCuadricula.addEventListener('click', () => {
+          raiz.style.setProperty(
+            '--fondo-hoja-patron',
+            'linear-gradient(var(--linea-cuaderno) 1px, transparent 1px), linear-gradient(90deg, var(--linea-cuaderno) 1px, transparent 1px)'
+          );
+          raiz.style.setProperty('--tamano-patron', '24px 24px');
+        });
+      }
+
+      if (botonPuntos) {
+        botonPuntos.addEventListener('click', () => {
+          raiz.style.setProperty(
+            '--fondo-hoja-patron',
+            'radial-gradient(rgba(28, 25, 23, 0.22) 1.5px, transparent 1.5px)'
+          );
+          raiz.style.setProperty('--tamano-patron', '20px 20px');
+        });
+      }
+
+      if (botonLiso) {
+        botonLiso.addEventListener('click', () => {
+          raiz.style.setProperty('--fondo-hoja-patron', 'none');
+        });
+      }
+
+      function guardarNotaBoceto() {
+        if (!entradaIdea || !listaBocetos) return;
+        const texto = entradaIdea.value.trim();
+        if (!texto) return;
+
+        const item = document.createElement('li');
+        item.textContent = `• ${texto}`;
+        listaBocetos.appendChild(item);
+        entradaIdea.value = '';
+        entradaIdea.focus();
+      }
+
+      if (botonGuardar) {
+        botonGuardar.addEventListener('click', guardarNotaBoceto);
+      }
+      if (entradaIdea) {
+        entradaIdea.addEventListener('keydown', (evento) => {
+          if (evento.key === 'Enter') {
+            evento.preventDefault();
+            guardarNotaBoceto();
+          }
+        });
+      }
+    })();
+  </script>
 
 </body>
 </html>

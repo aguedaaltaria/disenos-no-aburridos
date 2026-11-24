@@ -9,85 +9,184 @@
 </head>
 <body>
 
-    <a href="/" class="btn-back">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Volver al Hub
-    </a>
+    <div class="barra-superior-clay">
+        <a href="/" class="btn-back">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Volver al Hub
+        </a>
+    </div>
 
     <main class="clay-container">
+        <span class="etiqueta-arcilla">SOFT 3D // INSET + OUTSET VOLUME</span>
         <h1>Claymorphism</h1>
         <p style="font-size: 1.2rem; font-weight: 700; color: var(--text-muted); margin-bottom: 2rem;">
-            El estilo "plastilina" o 3D suave. Se caracteriza por formas infladas, bordes muy redondeados y volúmenes amigables generados mediante múltiples capas de sombras exteriores e interiores.
+            El estilo "plastilina" o 3D suave: formas infladas, esquinas generosas y volúmenes amigables construidos combinando sombras exteriores e interiores.
         </p>
 
         <div class="components-grid">
-            <!-- Tarjeta Clay -->
             <article class="clay-card">
                 <h2 style="font-weight: 900; margin-bottom: 0.8rem; color: var(--primary-clay);">Tarjeta 3D Suave</h2>
-                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">
-                    Las sombras dobles (outset e inset) crean un efecto físico tridimensional similar al barro o la plastilina moldeada.
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin: 0;">
+                    Las sombras dobles (<code>outset</code> para flotar e <code>inset</code> para el brillo superior y profundidad inferior) dan sensación de pieza moldeada.
                 </p>
             </article>
 
-            <!-- Formulario Clay -->
             <section style="display: flex; flex-direction: column; justify-content: center;">
                 <input type="text" class="clay-input" placeholder="Tu nombre..." />
-                <button class="clay-btn">
+                <button type="button" class="clay-btn">
                     <span>Enviar Acción</span>
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
             </section>
         </div>
 
-        <!-- Galería de Iconos UI -->
         <section class="icon-showcase">
             <h2 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 0.5rem; color: var(--primary-clay);">Biblioteca de Iconos UI</h2>
-            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">Iconos vectoriales limpios elevados con relieve suave.</p>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">Iconos vectoriales en pequeñas cápsulas acolchadas con relieve suave.</p>
             
             <div class="icon-grid">
-                <!-- Search -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                     Search
                 </div>
-                <!-- Home -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                     Home
                 </div>
-                <!-- Settings -->
                 <div class="icon-card">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
                     Settings
                 </div>
-                <!-- Favorite -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     Favorite
                 </div>
-                <!-- Delete -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
                     Delete
                 </div>
-                <!-- Star -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     Star
                 </div>
-                <!-- Check Circle -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                     Check
                 </div>
-                <!-- Close -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                     Close
                 </div>
             </div>
         </section>
+
+        <section class="guia-diferenciacion-clay" aria-label="Características y diferencias de Claymorphism">
+            <div class="guia-encabezado-clay">
+                <h2>Características y Diferencias</h2>
+                <span class="pista-lectura-clay">Volumen suave + tacto de arcilla</span>
+            </div>
+
+            <div class="rejilla-guia-clay">
+                <article class="tarjeta-rasgo-clay">
+                    <h3>Rasgos Esenciales</h3>
+                    <ul class="lista-puntos-clay">
+                        <li>
+                            <span class="etiqueta-comparativa-clay">Sombras Dobles</span>
+                            Combina sombra exterior suave con luz/sombra interior (<code>inset</code>) para simular volumen acolchado.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-clay">Curvas Generosas</span>
+                            Esquinas amplias y uniformes sin bordes afilados ni líneas negras gruesas.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-clay">Superficie Blanda</span>
+                            Paleta amigable y luminosa que transmite cercanía, juego y tacto esponjoso.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-clay">Presión</span>
+                            Al pulsarse, reduce el relieve exterior y acentúa la sombra interior como al hundir plastilina.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta-rasgo-clay">
+                    <h3>Cómo No Confundirlo</h3>
+                    <ul class="lista-puntos-clay">
+                        <li>
+                            <span class="etiqueta-comparativa-clay contraste-naranja">Vs. Glassmorphism</span>
+                            Clay es opaco, mullido y con volumen inflado; Glassmorphism es translúcido, afilado en el borde y esmerila el fondo.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-clay">Vs. Diseño Orgánico</span>
+                            Lo orgánico prioriza siluetas asimétricas tipo blob y tonos botánicos; Clay usa esquinas amplias y volumen 3D suave.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-clay contraste-naranja">Vs. Skeuomorphism</span>
+                            Skeuomorphism busca realismo físico de metal, cuero o diales; Clay estiliza una "plastilina" digital amigable.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-clay">Vs. Neobrutalismo</span>
+                            Evita bordes negros duros y sombras sólidas sin desenfoque; aquí las sombras son amplias y suaves.
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="banco-pruebas-clay">
+                <div style="flex: 1; min-width: 240px;">
+                    <h3 style="margin: 0 0 0.3rem 0; font-size: 1.05rem; font-weight: 900; color: var(--primary-clay);">
+                        Prueba el Tacto de Arcilla Inflada
+                    </h3>
+                    <p id="estadoClay" style="margin: 0 0 0.85rem 0; font-size: 0.9rem; font-weight: 700; color: var(--text-muted);">
+                        Estado: Pieza inflada · Haz clic para alternar presión o mantén pulsado el botón.
+                    </p>
+                    <button type="button" id="botonAlternarPresionClay" class="boton-demo-clay menta">
+                        Alternar Presión
+                    </button>
+                </div>
+
+                <div id="piezaArcillaDemo" class="pieza-arcilla-demo" title="Haz clic para probar">
+                    Pieza de Arcilla
+                </div>
+            </div>
+        </section>
     </main>
+
+    <script>
+        (function () {
+            const botonAlternar = document.getElementById('botonAlternarPresionClay');
+            const piezaDemo = document.getElementById('piezaArcillaDemo');
+            const estadoTexto = document.getElementById('estadoClay');
+            let estaPresionada = false;
+
+            function actualizarEstadoClay() {
+                if (!piezaDemo || !estadoTexto) return;
+                if (estaPresionada) {
+                    piezaDemo.classList.add('presionada');
+                    piezaDemo.textContent = 'Presionada (Inset)';
+                    estadoTexto.textContent = 'Estado: Relieve comprimido con sombra interior marcada.';
+                } else {
+                    piezaDemo.classList.remove('presionada');
+                    piezaDemo.textContent = 'Pieza de Arcilla';
+                    estadoTexto.textContent = 'Estado: Pieza inflada · Haz clic para alternar presión.';
+                }
+            }
+
+            if (botonAlternar) {
+                botonAlternar.addEventListener('click', () => {
+                    estaPresionada = !estaPresionada;
+                    actualizarEstadoClay();
+                });
+            }
+
+            if (piezaDemo) {
+                piezaDemo.addEventListener('click', () => {
+                    estaPresionada = !estaPresionada;
+                    actualizarEstadoClay();
+                });
+            }
+        })();
+    </script>
 
 </body>
 </html>

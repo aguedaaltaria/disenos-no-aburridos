@@ -16,73 +16,69 @@
         </a>
 
         <header class="bento-header">
+            <span class="etiqueta-bento">MODULAR GRID // COMPARTIMENTOS</span>
             <h1>Bento UI</h1>
-            <p>Estructura modular inspirada en las cajas bento japonesas. Información organizada por compartimentos con jerarquía visual clara.</p>
+            <p>Estructura modular inspirada en las cajas bento japonesas: compartimentos asimétricos con jerarquía visual clara y ritmo de rejilla.</p>
         </header>
 
-        <!-- Cuadrícula Bento principal -->
         <main class="bento-grid">
-            
-            <!-- Celda Grande (Hero Card) -->
-            <article class="bento-cell cell-large">
+
+            <article id="celdaPrincipalBento" class="bento-cell cell-large" data-celda="principal">
                 <div>
+                    <span class="etiqueta-celda">2x2 · Hero</span>
                     <h2 class="bento-title" style="font-size: 1.8rem;">Módulo Principal</h2>
                     <p class="bento-desc" style="font-size: 1.05rem; margin-top: 0.5rem;">
-                        Las celdas principales ocupan múltiples espacios en la rejilla para destacar el contenido de mayor valor, aportando ritmo visual y orden jerárquico.
+                        Las celdas principales ocupan múltiples espacios en la rejilla para destacar el contenido clave sin romper la armonía de la caja.
                     </p>
                 </div>
                 <div style="margin-top: 2rem; display: flex; gap: 1rem;">
-                    <button class="bento-btn">Acción Principal</button>
+                    <button type="button" class="bento-btn">Acción Principal</button>
                 </div>
             </article>
 
-            <!-- Celda Vertical -->
-            <article class="bento-cell cell-tall">
+            <article id="celdaEstadoBento" class="bento-cell cell-tall" data-celda="estado">
                 <div>
+                    <span class="etiqueta-celda">1x2 · Vertical</span>
                     <h2 class="bento-title">Estado del Sistema</h2>
-                    <p class="bento-desc">Monitoreo y métricas en tiempo real dentro de un compartimento vertical compacto.</p>
+                    <p class="bento-desc">Compartimento vertical ideal para métricas continuas, cronologías o indicadores de estado.</p>
                 </div>
-                <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 12px; border: 1px solid var(--bento-border);">
-                    <span style="color: #34d399; font-weight: 700; font-size: 0.9rem;">● Todos los sistemas operativos</span>
+                <div style="background: rgba(0,0,0,0.35); padding: 1rem; border-radius: 12px; border: 1px solid var(--bento-border);">
+                    <span style="color: var(--menta-bento); font-weight: 800; font-size: 0.9rem;">● Todos los sistemas operativos</span>
                 </div>
             </article>
 
-            <!-- Celda Estándar: Formulario -->
-            <article class="bento-cell">
+            <article id="celdaSuscripcionBento" class="bento-cell" data-celda="suscripcion">
                 <div>
+                    <span class="etiqueta-celda">1x1 · Formulario</span>
                     <h2 class="bento-title">Suscripción</h2>
                     <p class="bento-desc">Recibe actualizaciones semanales de diseño.</p>
                 </div>
                 <div>
                     <input type="text" class="bento-input" placeholder="correo@ejemplo.com" />
-                    <button class="bento-btn" style="width: 100%;">Unirme</button>
+                    <button type="button" class="bento-btn" style="width: 100%; margin-top: 0.85rem;">Unirme</button>
                 </div>
             </article>
 
-            <!-- Celda Ancha: Biblioteca de Iconos UI -->
-            <article class="bento-cell cell-wide">
+            <article id="celdaIconosBento" class="bento-cell cell-wide" data-celda="iconos">
                 <div>
+                    <span class="etiqueta-celda">2x1 · Horizontal</span>
                     <h2 class="bento-title">Componentes & Iconos UI</h2>
-                    <p class="bento-desc">Iconos vectoriales organizados en celdas modulares compactas.</p>
+                    <p class="bento-desc">Iconos vectoriales agrupados en un compartimento horizontal compacto.</p>
                 </div>
-                
+
                 <div class="icon-grid-bento">
-                    <!-- Search -->
                     <div class="icon-box">
                         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                         Search
                     </div>
-                    <!-- Home -->
                     <div class="icon-box">
                         <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                         Home
                     </div>
-                    <!-- Settings -->
                     <div class="icon-box">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1 z"/></svg>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0l2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
                         Settings
                     </div>
-                    <!-- Star -->
                     <div class="icon-box">
                         <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         Star
@@ -90,9 +86,9 @@
                 </div>
             </article>
 
-            <!-- Celda Estándar Adicional -->
-            <article class="bento-cell">
+            <article id="celdaRendimientoBento" class="bento-cell" data-celda="rendimiento">
                 <div>
+                    <span class="etiqueta-celda">1x1 · Métrica</span>
                     <h2 class="bento-title">Rendimiento</h2>
                     <p class="bento-desc">Optimizado para cargas ultrarrápidas.</p>
                 </div>
@@ -102,7 +98,108 @@
             </article>
 
         </main>
+
+        <section class="guia-diferenciacion-bento" aria-label="Características y diferencias de Bento UI">
+            <div class="guia-encabezado-bento">
+                <h2>Características y Diferencias</h2>
+                <span class="pista-lectura-bento">Arquitectura de rejilla + foco interactivo</span>
+            </div>
+
+            <div class="rejilla-guia-bento">
+                <article class="tarjeta-rasgo-bento">
+                    <h3>Rasgos Esenciales</h3>
+                    <ul class="lista-puntos-bento">
+                        <li>
+                            <span class="etiqueta-comparativa-bento">Proporciones</span>
+                            Celdas de distinto tamaño (<code>span 2</code> en ancho, alto o ambos) dentro de una rejilla ordenada.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-bento">Compartimentos</span>
+                            Cada tarjeta funciona como una porción independiente con un propósito claro (métrica, formulario, iconos).
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-bento">Ritmo</span>
+                            Separación uniforme (<code>gap</code>) y esquinas redondeadas coherentes para dar lectura rápida.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-bento">Adaptabilidad</span>
+                            Se reacomoda a una sola columna en pantallas pequeñas sin perder su estructura modular.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta-rasgo-bento">
+                    <h3>Cómo No Confundirlo</h3>
+                    <ul class="lista-puntos-bento">
+                        <li>
+                            <span class="etiqueta-comparativa-bento contraste-coral">Vs. Minimalismo Suizo</span>
+                            Bento prioriza cajas modulares contenidas y tarjetas; lo suizo confía en tipografía monumental, líneas finas y aire editorial.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-bento">Vs. Glassmorphism / Aurora</span>
+                            Bento organiza por compartimentos estructurados con rejilla asimétrica, no por vidrios translúcidos ni luces difusas.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-bento contraste-coral">Vs. Neobrutalismo</span>
+                            Evita bordes negros gruesos y sombras duras desplazadas; usa bordes sutiles y superficies limpias.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-bento">Vs. Wireframe</span>
+                            Presenta jerarquía visual acabada y datos/componentes listos, no un esquema en blanco y negro de baja fidelidad.
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="banco-pruebas-bento">
+                <div style="flex: 1; min-width: 240px;">
+                    <h3 style="margin: 0 0 0.25rem 0; font-size: 1rem; font-weight: 900;">
+                        Resalta un Compartimento de la Caja Bento
+                    </h3>
+                    <p id="textoFocoBento" style="margin: 0; font-size: 0.88rem; color: var(--text-muted);">
+                        Elige un compartimento para ver cómo destaca su proporción dentro de la rejilla.
+                    </p>
+                </div>
+
+                <div class="controles-celda-bento">
+                    <button type="button" class="boton-filtro-bento" data-objetivo="celdaPrincipalBento" data-mensaje="Módulo Principal (2x2): concentra el foco principal de la interfaz.">Principal (2x2)</button>
+                    <button type="button" class="boton-filtro-bento secundario" data-objetivo="celdaEstadoBento" data-mensaje="Estado del Sistema (1x2): aprovecha el eje vertical para seguimiento continuo.">Vertical (1x2)</button>
+                    <button type="button" class="boton-filtro-bento secundario" data-objetivo="celdaIconosBento" data-mensaje="Componentes & Iconos (2x1): agrupa elementos horizontales en una franja ancha.">Ancha (2x1)</button>
+                    <button type="button" class="boton-filtro-bento secundario" data-objetivo="limpiar" data-mensaje="Vista general: todos los compartimentos en equilibrio.">Limpiar</button>
+                </div>
+            </div>
+        </section>
     </div>
 
+<script>
+        (function () {
+            const botonesFoco = document.querySelectorAll('.boton-filtro-bento');
+            const celdas = document.querySelectorAll('.bento-cell');
+            const textoFoco = document.getElementById('textoFocoBento');
+
+            botonesFoco.forEach((boton) => {
+                boton.addEventListener('click', () => {
+                    const objetivoId = boton.getAttribute('data-objetivo');
+                    const mensaje = boton.getAttribute('data-mensaje');
+
+                    botonesFoco.forEach((btn) => btn.classList.remove('activo'));
+                    celdas.forEach((celda) => celda.classList.remove('celda-destacada-bento'));
+
+                    if (objetivoId && objetivoId !== 'limpiar') {
+                        boton.classList.add('activo');
+                        const celdaObjetivo = document.getElementById(objetivoId);
+                        if (celdaObjetivo) {
+                            celdaObjetivo.classList.add('celda-destacada-bento');
+                            celdaObjetivo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    }
+
+                    if (textoFoco && mensaje) {
+                        textoFoco.textContent = mensaje;
+                    }
+                });
+            });
+        })();
+    </script>
 </body>
 </html>

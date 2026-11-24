@@ -1,8 +1,14 @@
 :root {
-    --y2k-bg: #008080; /* Clásico verde teal de fondo de escritorio retro */
+    --y2k-bg: #008080;
     --y2k-silver: #c0c0c0;
     --y2k-blue: #000080;
     --y2k-blue-grad: #1084d0;
+    --y2k-dark: #404040;
+    --y2k-mid: #808080;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -14,41 +20,48 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 2rem;
+    margin: 0;
 }
 
-/* Ventana estilo Windows 98 / Winamp */
+.barra-superior-y2k {
+    width: 100%;
+    max-width: 900px;
+}
+
 .y2k-window {
     width: 100%;
     max-width: 900px;
     background: var(--y2k-silver);
     border-top: 2px solid #ffffff;
     border-left: 2px solid #ffffff;
-    border-right: 2px solid #808080;
-    border-bottom: 2px solid #808080;
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
+    border-right: 2px solid var(--y2k-dark);
+    border-bottom: 2px solid var(--y2k-dark);
+    box-shadow: inset 1px 1px 0px #dfdfdf,
+                inset -1px -1px 0px var(--y2k-mid),
+                6px 6px 0px rgba(0, 0, 0, 0.35);
     padding: 6px;
-    margin-top: 2rem;
+    margin-top: 1.25rem;
 }
 
 .y2k-titlebar {
     background: linear-gradient(90deg, var(--y2k-blue), var(--y2k-blue-grad));
-    color: white;
+    color: #ffffff;
     font-weight: bold;
     padding: 4px 8px;
     font-size: 13px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .y2k-btn-close {
     background: var(--y2k-silver);
-    color: black;
+    color: #000000;
     border-top: 1px solid #ffffff;
     border-left: 1px solid #ffffff;
-    border-right: 1px solid #404040;
-    border-bottom: 1px solid #404040;
+    border-right: 1px solid var(--y2k-dark);
+    border-bottom: 1px solid var(--y2k-dark);
     width: 16px;
     height: 16px;
     font-size: 10px;
@@ -57,36 +70,44 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    user-select: none;
+}
+
+.y2k-btn-close:active {
+    border-top: 1px solid var(--y2k-dark);
+    border-left: 1px solid var(--y2k-dark);
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
 }
 
 .btn-back {
     display: inline-block;
     text-decoration: none;
     background: var(--y2k-silver);
-    color: black;
+    color: #000000;
     border-top: 2px solid #ffffff;
     border-left: 2px solid #ffffff;
-    border-right: 2px solid #808080;
-    border-bottom: 2px solid #808080;
+    border-right: 2px solid var(--y2k-dark);
+    border-bottom: 2px solid var(--y2k-dark);
     font-weight: bold;
     padding: 6px 14px;
     font-size: 12px;
-    margin-bottom: 1.5rem;
 }
 
-.btn-back:active, .y2k-button:active {
-    border-top: 2px solid #808080;
-    border-left: 2px solid #808080;
+.btn-back:active,
+.y2k-button:active {
+    border-top: 2px solid var(--y2k-dark);
+    border-left: 2px solid var(--y2k-dark);
     border-right: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
     padding: 7px 13px 5px 15px;
 }
 
 .y2k-content {
-    padding: 1rem;
+    padding: 1.1rem;
     background: var(--y2k-silver);
-    border-top: 1px solid #808080;
-    border-left: 1px solid #808080;
+    border-top: 1px solid var(--y2k-mid);
+    border-left: 1px solid var(--y2k-mid);
     border-right: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
 }
@@ -100,8 +121,8 @@ body {
 
 .y2k-box {
     background: #ffffff;
-    border-top: 2px solid #808080;
-    border-left: 2px solid #808080;
+    border-top: 2px solid var(--y2k-mid);
+    border-left: 2px solid var(--y2k-mid);
     border-right: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
     padding: 1.2rem;
@@ -109,24 +130,26 @@ body {
 
 .y2k-input {
     width: 100%;
-    padding: 8px;
+    padding: 8px 10px;
     background: #ffffff;
-    border-top: 2px solid #808080;
-    border-left: 2px solid #808080;
+    border-top: 2px solid var(--y2k-mid);
+    border-left: 2px solid var(--y2k-mid);
     border-right: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
     font-family: inherit;
     font-size: 12px;
+    color: #000000;
     outline: none;
     margin-bottom: 1rem;
 }
 
 .y2k-button {
     background: var(--y2k-silver);
+    color: #000000;
     border-top: 2px solid #ffffff;
     border-left: 2px solid #ffffff;
-    border-right: 2px solid #808080;
-    border-bottom: 2px solid #808080;
+    border-right: 2px solid var(--y2k-dark);
+    border-bottom: 2px solid var(--y2k-dark);
     padding: 6px 16px;
     font-family: inherit;
     font-weight: bold;
@@ -137,16 +160,15 @@ body {
     gap: 6px;
 }
 
-/* Galería de Iconos UI */
 .icon-showcase {
     margin-top: 2rem;
-    border-top: 1px solid #808080;
+    border-top: 1px solid var(--y2k-mid);
     padding-top: 1.5rem;
 }
 
 .icon-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
     gap: 0.8rem;
     margin-top: 0.8rem;
 }
@@ -155,8 +177,8 @@ body {
     background: var(--y2k-silver);
     border-top: 2px solid #ffffff;
     border-left: 2px solid #ffffff;
-    border-right: 2px solid #808080;
-    border-bottom: 2px solid #808080;
+    border-right: 2px solid var(--y2k-dark);
+    border-bottom: 2px solid var(--y2k-dark);
     padding: 0.8rem;
     display: flex;
     flex-direction: column;
@@ -164,6 +186,14 @@ body {
     gap: 0.4rem;
     font-size: 11px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.icon-card:active {
+    border-top: 2px solid var(--y2k-dark);
+    border-left: 2px solid var(--y2k-dark);
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
 }
 
 .icon-card svg {
@@ -174,4 +204,139 @@ body {
     stroke-width: 2;
     stroke-linecap: square;
     stroke-linejoin: miter;
+}
+
+/* Sección guía inferior e interactiva */
+.guia-diferenciacion-y2k {
+    margin-top: 2rem;
+    border-top: 1px solid var(--y2k-mid);
+    padding-top: 1.5rem;
+}
+
+.guia-encabezado-y2k {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.guia-encabezado-y2k h2 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.pista-lectura-y2k {
+    background: #ffffff;
+    border-top: 1px solid var(--y2k-mid);
+    border-left: 1px solid var(--y2k-mid);
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.rejilla-guia-y2k {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1.25rem;
+}
+
+.tarjeta-rasgo-y2k {
+    background: var(--y2k-silver);
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid var(--y2k-dark);
+    border-bottom: 2px solid var(--y2k-dark);
+    padding: 1rem;
+}
+
+.tarjeta-rasgo-y2k h3 {
+    margin: 0 0 0.7rem 0;
+    font-size: 0.92rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--y2k-mid);
+}
+
+.lista-puntos-y2k {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.lista-puntos-y2k li {
+    font-size: 12px;
+    line-height: 1.45;
+    color: #111111;
+}
+
+.etiqueta-comparativa-y2k {
+    display: inline-block;
+    background: #ffffff;
+    border: 1px solid var(--y2k-mid);
+    font-size: 10px;
+    font-weight: bold;
+    padding: 1px 5px;
+    margin-right: 4px;
+}
+
+.banco-pruebas-y2k {
+    margin-top: 1.25rem;
+    background: var(--y2k-silver);
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid var(--y2k-dark);
+    border-bottom: 2px solid var(--y2k-dark);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.fila-comando-y2k {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.fila-comando-y2k .y2k-input {
+    flex: 1;
+    min-width: 190px;
+    margin-bottom: 0;
+}
+
+.salida-consola-y2k {
+    background: #000000;
+    color: #00ff66;
+    padding: 0.75rem 0.9rem;
+    font-size: 11.5px;
+    line-height: 1.45;
+    border-top: 2px solid var(--y2k-dark);
+    border-left: 2px solid var(--y2k-dark);
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+.barra-estado-y2k {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: 11px;
+    padding: 4px 6px;
+    border-top: 1px solid var(--y2k-mid);
+    border-left: 1px solid var(--y2k-mid);
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
 }

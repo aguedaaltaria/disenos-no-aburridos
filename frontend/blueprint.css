@@ -1,0 +1,310 @@
+:root {
+  --fondo-plano: #0b3c5d;
+  --panel-plano: rgba(11, 60, 93, 0.84);
+  --tinta-clara: #f0f9ff;
+  --tinta-suave: rgba(240, 249, 255, 0.74);
+  --linea-cota: rgba(255, 255, 255, 0.65);
+  --resalte-cota: #7dd3fc;
+  --reticula-secundaria: rgba(255, 255, 255, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  color: var(--tinta-clara);
+  background-color: var(--fondo-plano);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(var(--reticula-secundaria) 1px, transparent 1px),
+    linear-gradient(90deg, var(--reticula-secundaria) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.barra-superior {
+  width: 100%;
+  max-width: 920px;
+  margin-bottom: 1.5rem;
+}
+
+.boton-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--tinta-clara);
+  background-color: var(--panel-plano);
+  border: 1px solid var(--linea-cota);
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.boton-volver:hover {
+  background-color: rgba(125, 211, 252, 0.18);
+  border-color: var(--resalte-cota);
+}
+
+.lienzo-plano {
+  width: 100%;
+  max-width: 920px;
+  background-color: var(--panel-plano);
+  border: 1px solid var(--linea-cota);
+  padding: 2.5rem;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.encabezado-cota {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--resalte-cota);
+  border-bottom: 1px solid var(--linea-cota);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.titulo-plano {
+  margin: 0 0 0.75rem 0;
+  font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.descripcion-plano {
+  margin: 0 0 2rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--tinta-suave);
+  max-width: 72ch;
+}
+
+.rejilla-componentes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.caja-cota {
+  border: 1px dashed var(--linea-cota);
+  background-color: rgba(11, 60, 93, 0.78);
+  padding: 1.25rem 1.5rem;
+}
+
+.caja-cota h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.15rem;
+  color: var(--resalte-cota);
+}
+
+.caja-cota p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--tinta-suave);
+}
+
+.formulario-plano {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.entrada-plano {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--tinta-clara);
+  background-color: rgba(7, 38, 59, 0.85);
+  border: 1px solid var(--linea-cota);
+  outline: none;
+}
+
+.entrada-plano::placeholder {
+  color: rgba(240, 249, 255, 0.45);
+}
+
+.entrada-plano:focus {
+  border-color: var(--resalte-cota);
+}
+
+.boton-plano {
+  background-color: transparent;
+  color: var(--tinta-clara);
+  border: 1px solid var(--tinta-clara);
+  padding: 0.8rem 1.4rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.boton-plano:hover {
+  background-color: var(--tinta-clara);
+  color: var(--fondo-plano);
+}
+
+.seccion-iconos {
+  border-top: 1px solid var(--linea-cota);
+  padding-top: 1.75rem;
+}
+
+.seccion-iconos h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.15rem;
+  color: var(--resalte-cota);
+}
+
+.galeria-iconos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 1rem;
+}
+
+.ficha-icono {
+  background-color: rgba(11, 60, 93, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.ficha-icono:hover {
+  border-color: var(--resalte-cota);
+  background-color: rgba(125, 211, 252, 0.12);
+}
+
+.ficha-icono svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--tinta-clara);
+  stroke-width: 1.75;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+/* Sección guía inferior e interactiva */
+.guia-diferenciacion-plano {
+  margin-top: 2.25rem;
+  border-top: 1px solid var(--linea-cota);
+  padding-top: 1.75rem;
+}
+
+.guia-encabezado-plano {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.guia-encabezado-plano h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--resalte-cota);
+}
+
+.pista-lectura-plano {
+  border: 1px dashed var(--resalte-cota);
+  padding: 0.25rem 0.65rem;
+  font-size: 0.78rem;
+  color: var(--tinta-clara);
+}
+
+.rejilla-guia-plano {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjeta-rasgo-plano {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(7, 38, 59, 0.65);
+  padding: 1.25rem;
+}
+
+.tarjeta-rasgo-plano h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  color: var(--resalte-cota);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.35);
+}
+
+.lista-puntos-plano {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.lista-puntos-plano li {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--tinta-suave);
+}
+
+.etiqueta-comparativa-plano {
+  display: inline-block;
+  border: 1px solid var(--resalte-cota);
+  color: var(--resalte-cota);
+  font-size: 0.72rem;
+  padding: 0.05rem 0.4rem;
+  margin-right: 0.35rem;
+}
+
+.banco-pruebas-plano {
+  margin-top: 1.5rem;
+  border: 1px dashed var(--linea-cota);
+  background-color: rgba(7, 38, 59, 0.72);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.fila-controles-plano {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.lista-cotas-plano {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.84rem;
+  color: var(--resalte-cota);
+}

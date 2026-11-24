@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minimalismo Suizo - Modern UI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="swiss.css">
 </head>
 <body>
 
-    <div style="width: 100%; max-width: 900px;">
+    <div class="barra-superior-suiza">
         <a href="/" class="btn-back">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Volver al Hub
@@ -17,24 +17,29 @@
     </div>
 
     <main class="swiss-container">
-        <h1 class="swiss-title">Minimalismo Suizo</h1>
-        <p style="font-size: 1.15rem; font-weight: 700; line-height: 1.5; margin-bottom: 1.5rem;">
-            Tipografía gigante, espacio en blanco riguroso y retículas estrictas. Todo depende de la escala y la alineación impecable sin adornos innecesarios.
+        <div class="encabezado-editorial-suizo">
+            <span class="marca-roja-suiza">Estilo Tipográfico Internacional</span>
+            <span>Retícula // Escala // Alineación</span>
+        </div>
+
+        <h1 id="titularSuizo" class="swiss-title">Minimalismo Suizo</h1>
+        <p style="font-size: 1.15rem; font-weight: 700; line-height: 1.5; margin: 0 0 1.5rem 0;">
+            Tipografía de gran escala, espacio en blanco riguroso y alineación editorial limpia. Todo depende de la proporción y el contraste tipográfico sin adornos innecesarios.
         </p>
 
         <div class="swiss-divider"></div>
 
         <div class="components-grid">
             <article class="swiss-card">
-                <h3 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 0.5rem; text-transform: uppercase;">Rigidez Tipográfica</h3>
-                <p style="color: #4b5563; font-size: 0.95rem; line-height: 1.6;">
-                    El poder del diseño suizo reside en la jerarquía absoluta de los caracteres y el contraste de escala tipográfica pura.
+                <h3 style="font-size: 1.25rem; font-weight: 900; margin: 0 0 0.5rem 0; text-transform: uppercase;">Rigidez Tipográfica</h3>
+                <p style="color: #4b5563; font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                    El poder del diseño suizo reside en la jerarquía clara de los caracteres, las líneas divisorias limpias y el respeto al espacio libre.
                 </p>
             </article>
 
             <section style="display: flex; flex-direction: column; justify-content: center;">
                 <input type="text" class="swiss-input" placeholder="Nombre completo..." />
-                <button class="swiss-btn">
+                <button type="button" class="swiss-btn">
                     <span>Enviar</span>
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
@@ -42,7 +47,7 @@
         </div>
 
         <section class="icon-showcase">
-            <h3 style="font-size: 1.1rem; font-weight: 900; text-transform: uppercase; margin-bottom: 1rem;">Sistema de Iconos UI</h3>
+            <h3 style="font-size: 1.1rem; font-weight: 900; text-transform: uppercase; margin: 0 0 1rem 0;">Sistema de Iconos UI</h3>
             <div class="icon-grid">
                 <div class="icon-card"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Search</div>
                 <div class="icon-card"><svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</div>
@@ -50,7 +55,106 @@
                 <div class="icon-card"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Star</div>
             </div>
         </section>
+
+        <section class="guia-diferenciacion-suiza" aria-label="Características y diferencias del Minimalismo Suizo">
+            <div class="guia-encabezado-suiza">
+                <h2>Características y Diferencias</h2>
+                <span class="pista-lectura-suiza">Editorial + Escala Tipográfica</span>
+            </div>
+
+            <div class="rejilla-guia-suiza">
+                <article class="tarjeta-rasgo-suiza">
+                    <h3>Rasgos Esenciales</h3>
+                    <ul class="lista-puntos-suiza">
+                        <li>
+                            <span class="etiqueta-comparativa-suiza rojo">Tipografía</span>
+                            Titulares monumentales, interlineado ajustado y contraste fuerte entre pesos (<code>400</code> vs <code>900</code>).
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-suiza">Alineación</span>
+                            Ejes limpios, líneas divisorias precisas y campos de texto subrayados sin cajas pesadas.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-suiza">Acento Puntual</span>
+                            Uso contenido de un color de énfasis (como el rojo suizo) sobre superficies neutras.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-suiza">Claridad</span>
+                            Cero ornamentos decorativos: la jerarquía nace de la proporción y el espacio en blanco.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta-rasgo-suiza">
+                    <h3>Cómo No Confundirlo</h3>
+                    <ul class="lista-puntos-suiza">
+                        <li>
+                            <span class="etiqueta-comparativa-suiza rojo">Vs. Wireframe</span>
+                            Wireframe es un boceto estructural de UX con casillas cerradas y marcador de flujo; lo suizo es composición editorial acabada.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-suiza">Vs. Bento UI</span>
+                            Bento agrupa por compartimentos modulares de rejilla; lo suizo prioriza tipografía editorial y líneas limpias.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-suiza rojo">Vs. Neobrutalismo</span>
+                            Evita bordes negros gruesos y sombras duras desplazadas; se apoya en proporción tipográfica y orden editorial.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-suiza">Vs. Blueprint</span>
+                            No imita planos de ingeniería ni retículas técnicas de medición; su raíz es el cartel y la publicación editorial.
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="banco-pruebas-suiza">
+                <div style="flex: 1; min-width: 240px;">
+                    <h3 style="margin: 0 0 0.25rem 0; font-size: 1rem; font-weight: 900; text-transform: uppercase;">
+                        Prueba la Escala Tipográfica del Titular
+                    </h3>
+                    <p id="estadoEscalaSuiza" style="margin: 0; font-size: 0.88rem; color: #4b5563;">
+                        Escala actual: Cartel Editorial (clamp 2.5rem – 5rem).
+                    </p>
+                </div>
+
+                <div class="controles-escala-suiza">
+                    <button type="button" class="boton-escala-suiza activo" data-escala="clamp(2.5rem, 5vw, 5rem)" data-desc="Escala actual: Cartel Editorial (clamp 2.5rem – 5rem).">Cartel (XL)</button>
+                    <button type="button" class="boton-escala-suiza secundario" data-escala="clamp(2rem, 3.8vw, 3.4rem)" data-desc="Escala actual: Revista / Artículo (clamp 2rem – 3.4rem).">Editorial (L)</button>
+                    <button type="button" class="boton-escala-suiza secundario" data-escala="clamp(1.6rem, 2.6vw, 2.3rem)" data-desc="Escala actual: Interfaz Compacta (clamp 1.6rem – 2.3rem).">Compacto (M)</button>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <script>
+        (function () {
+            const botonesEscala = document.querySelectorAll('.boton-escala-suiza');
+            const textoEstado = document.getElementById('estadoEscalaSuiza');
+            const raiz = document.documentElement;
+
+            botonesEscala.forEach((boton) => {
+                boton.addEventListener('click', () => {
+                    const escala = boton.getAttribute('data-escala');
+                    const descripcion = boton.getAttribute('data-desc');
+
+                    botonesEscala.forEach((btn) => {
+                        btn.classList.remove('activo');
+                        btn.classList.add('secundario');
+                    });
+                    boton.classList.remove('secundario');
+                    boton.classList.add('activo');
+
+                    if (escala) {
+                        raiz.style.setProperty('--escala-titulo-suizo', escala);
+                    }
+                    if (textoEstado && descripcion) {
+                        textoEstado.textContent = descripcion;
+                    }
+                });
+            });
+        })();
+    </script>
 
 </body>
 </html>

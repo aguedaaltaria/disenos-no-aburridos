@@ -8,27 +8,27 @@
 </head>
 <body>
 
-    <div style="width: 100%; max-width: 900px;">
+    <div class="barra-superior-max">
         <a href="/" class="btn-back">◄ Volver al Hub</a>
     </div>
 
-    <main class="max-container">
+    <main id="contenedorMaximalista" class="max-container">
         <div class="max-badge">Maximalismo / Arte</div>
-        <p style="font-size: 1.3rem; font-family: sans-serif; font-weight: 900; line-height: 1.4; margin-bottom: 2rem;">
-            El caos controlado. Colores saturados en conflicto armónico, rotaciones intencionales, superposiciones y collares de arte punk que exigen impacto visual inmediato.
+        <p style="font-size: 1.25rem; font-family: sans-serif; font-weight: 900; line-height: 1.4; margin-bottom: 2rem;">
+            El caos controlado: colores saturados en choque armónico, rotaciones intencionales, bordes variados y energía punk que exigen impacto visual inmediato.
         </p>
 
         <div class="components-grid">
             <article class="max-card">
-                <h2 style="font-size: 1.8rem; margin-bottom: 0.8rem; text-transform: uppercase;">Collage Visual</h2>
-                <p style="font-family: sans-serif; font-weight: 700; font-size: 1rem; line-height: 1.4;">
-                    Rompe todas las reglas de la retícula tradicional con sombras sólidas masivas en cian y fucsia.
+                <h2 style="font-size: 1.8rem; margin: 0 0 0.8rem 0; text-transform: uppercase;">Collage Visual</h2>
+                <p style="font-family: sans-serif; font-weight: 700; font-size: 1rem; line-height: 1.45; margin: 0;">
+                    Rompe la simetría tradicional con inclinaciones visibles, contrastes eléctricos y sombras sólidas en cian y fucsia.
                 </p>
             </article>
 
             <section style="display: flex; flex-direction: column; justify-content: center;">
                 <input type="text" class="max-input" placeholder="¡Escribe aquí..." />
-                <button class="max-btn">
+                <button type="button" class="max-btn">
                     <span>Impacto Total</span>
                     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
@@ -36,7 +36,7 @@
         </div>
 
         <section class="icon-showcase">
-            <h2 style="font-size: 1.6rem; text-transform: uppercase; margin-bottom: 1rem;">Biblioteca de Iconos UI (Caos)</h2>
+            <h2 style="font-size: 1.6rem; text-transform: uppercase; margin: 0 0 1rem 0;">Biblioteca de Iconos UI (Caos)</h2>
             <div class="icon-grid">
                 <div class="icon-card"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Search</div>
                 <div class="icon-card"><svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</div>
@@ -44,7 +44,111 @@
                 <div class="icon-card"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Star</div>
             </div>
         </section>
+
+        <section class="guia-diferenciacion-max" aria-label="Características y diferencias del Maximalismo">
+            <div class="guia-encabezado-max">
+                <h2>Características y Diferencias</h2>
+                <span class="pista-lectura-max">Caos Controlado // Punk Collage</span>
+            </div>
+
+            <div class="rejilla-guia-max">
+                <article class="tarjeta-rasgo-max">
+                    <h3>Rasgos Esenciales</h3>
+                    <ul class="lista-puntos-max">
+                        <li>
+                            <span class="etiqueta-comparativa-max">Rotación</span>
+                            Inclinaciones intencionales (<code>transform: rotate</code>) que rompen la alineación rígida tradicional.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-max fucsia">Saturación</span>
+                            Combinación de colores eléctricos y contrastes fuertes sin buscar sutileza minimalista.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-max">Textura</span>
+                            Fondos rayados o cargados y bordes variados (sólidos y punteados) con aire de fanzine/collage.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-max">Energía</span>
+                            Reacciones vivas y juguetonas al pasar el cursor o hacer clic.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta-rasgo-max secundaria">
+                    <h3>Cómo No Confundirlo</h3>
+                    <ul class="lista-puntos-max">
+                        <li>
+                            <span class="etiqueta-comparativa-max fucsia">Vs. Neobrutalismo</span>
+                            Neobrutalismo ordena bloques firmes y limpios; Maximalismo abraza la inclinación, el collage y la saturación expresiva.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-max">Vs. Comic / Halftone</span>
+                            Comic se apoya en viñetas narrativas y tramas de puntos; Maximalismo actúa como cartel/collage punk sin regla de historieta.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-max fucsia">Vs. Minimalismo Suizo</span>
+                            Es el polo opuesto al espacio en blanco y la contención tipográfica suiza.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-max">Vs. Cyberpunk</span>
+                            Cyberpunk vive de la noche, el neón oscuro y las *scanlines*; Maximalismo explota luz diurna saturada y fanzine.
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="banco-pruebas-max">
+                <div style="flex: 1; min-width: 220px;">
+                    <h3 style="margin: 0 0 0.25rem 0; font-size: 1.15rem; text-transform: uppercase;">
+                        Prueba la Inclinación del Collage
+                    </h3>
+                    <p style="margin: 0 0 0.35rem 0; font-family: sans-serif; font-size: 0.86rem; font-weight: 700;">
+                        Alterna el ángulo del lienzo para comprobar cómo cambia su tensión visual.
+                    </p>
+                </div>
+
+                <div class="controles-caos-max">
+                    <button type="button" id="botonRotarMax" class="boton-caos-max">Girar Lienzo</button>
+                    <button type="button" id="botonCentrarMax" class="boton-caos-max cian">Alinear 0°</button>
+                </div>
+
+                <div id="estadoCaosMax" class="estado-caos-max">
+                    Ángulo actual del lienzo: 1deg (tensión de collage moderada).
+                </div>
+            </div>
+        </section>
     </main>
+
+    <script>
+        (function () {
+            const angulos = ['1deg', '-2deg', '2.5deg', '-1.5deg'];
+            const botonRotar = document.getElementById('botonRotarMax');
+            const botonCentrar = document.getElementById('botonCentrarMax');
+            const estadoTexto = document.getElementById('estadoCaosMax');
+            const raiz = document.documentElement;
+            let indice = 0;
+
+            if (botonRotar) {
+                botonRotar.addEventListener('click', () => {
+                    indice = (indice + 1) % angulos.length;
+                    const nuevoAngulo = angulos[indice];
+                    raiz.style.setProperty('--inclinacion-max', nuevoAngulo);
+                    if (estadoTexto) {
+                        estadoTexto.textContent = `Ángulo actual del lienzo: ${nuevoAngulo} (rotación de collage activa).`;
+                    }
+                });
+            }
+
+            if (botonCentrar) {
+                botonCentrar.addEventListener('click', () => {
+                    raiz.style.setProperty('--inclinacion-max', '0deg');
+                    if (estadoTexto) {
+                        estadoTexto.textContent = 'Ángulo actual del lienzo: 0deg (alineación neutralizada temporalmente).';
+                    }
+                });
+            }
+        })();
+    </script>
 
 </body>
 </html>

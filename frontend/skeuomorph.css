@@ -1,13 +1,19 @@
 :root {
-    --bg-skeuo: #1e2229;         /* Fondo de estudio o rack de audio */
-    --panel-skeuo: #2b303b;      /* Superficie metálica oscura cepillada */
-    --border-metal: #4f5666;     /* Borde biselado metálico */
-    --accent-skeuo: #3b82f6;     /* LED azul indicador de encendido */
+    --bg-skeuo: #1e2229;
+    --panel-skeuo: #2b303b;
+    --border-metal: #4f5666;
+    --accent-skeuo: #3b82f6;
+    --angulo-dial: -45deg;
     --text-main: #f3f4f6;
     --text-muted: #9ca3af;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
+    margin: 0;
     font-family: 'Nunito', sans-serif;
     background-color: var(--bg-skeuo);
     color: var(--text-main);
@@ -16,16 +22,16 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 2rem;
-    background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
     background-size: 20px 20px;
 }
 
-/* 
-  REGLA CLAVE SKEUOMORPHISM MODERNO:
-  Estructura con aspecto de hardware físico de estudio, tornillos en esquinas 
-  y múltiples sombras interiores y exteriores para dar volumen táctil.
-*/
+.barra-superior-skeuo {
+    width: 100%;
+    max-width: 900px;
+}
+
 .skeuo-container {
     width: 100%;
     max-width: 900px;
@@ -33,15 +39,37 @@ body {
     border: 3px solid var(--border-metal);
     border-radius: 16px;
     padding: 3rem;
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15),
-        inset 0 -2px 5px rgba(0, 0, 0, 0.5);
-    margin-top: 2rem;
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.62),
+                inset 0 1px 0 rgba(255, 255, 255, 0.16),
+                inset 0 -2px 6px rgba(0, 0, 0, 0.55);
+    margin-top: 1.5rem;
     position: relative;
 }
 
-/* Botón de regreso estilo hardware */
+.etiqueta-hardware-skeuo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: #171a21;
+    border: 1px solid var(--border-metal);
+    border-radius: 6px;
+    padding: 0.28rem 0.7rem;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.led-indicador-skeuo {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent-skeuo);
+    box-shadow: 0 0 8px var(--accent-skeuo);
+}
+
 .btn-back {
     display: inline-flex;
     align-items: center;
@@ -53,9 +81,8 @@ body {
     font-weight: 700;
     padding: 0.6rem 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
     transition: all 0.2s ease;
-    margin-bottom: 2rem;
 }
 
 .btn-back:hover {
@@ -65,11 +92,11 @@ body {
 }
 
 h1 {
-    font-size: 2.8rem;
+    font-size: clamp(2.1rem, 4.5vw, 2.8rem);
     font-weight: 900;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 0;
     color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.5px;
 }
 
@@ -80,41 +107,40 @@ h1 {
     margin-top: 2rem;
 }
 
-/* Tarjeta con textura de rack de audio */
 .skeuo-card {
     background: linear-gradient(145deg, #282e3a, #1f232c);
     border: 2px solid var(--border-metal);
     border-radius: 12px;
     padding: 1.8rem;
-    box-shadow: inset 0 2px 4px rgba(255,255,255,0.05),
-                0 8px 16px rgba(0,0,0,0.3);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.06),
+                0 8px 18px rgba(0, 0, 0, 0.35);
 }
 
-/* Control táctil / Dial Skeuomorphic */
 .skeuo-dial-container {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    margin-bottom: 1.5rem;
 }
 
 .skeuo-dial {
-    width: 70px;
-    height: 70px;
+    width: 74px;
+    height: 74px;
+    flex-shrink: 0;
     background: linear-gradient(135deg, #3a4252 0%, #1a1e26 100%);
     border-radius: 50%;
     border: 4px solid #4f5666;
-    box-shadow: 
-        0 8px 16px rgba(0, 0, 0, 0.6),
-        inset 0 2px 3px rgba(255, 255, 255, 0.2),
-        inset 0 -3px 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6),
+                inset 0 2px 3px rgba(255, 255, 255, 0.22),
+                inset 0 -3px 5px rgba(0, 0, 0, 0.8);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transform: rotate(var(--angulo-dial));
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Indicador físico del dial */
 .skeuo-dial::after {
     content: '';
     position: absolute;
@@ -123,7 +149,7 @@ h1 {
     height: 18px;
     background-color: var(--accent-skeuo);
     border-radius: 2px;
-    box-shadow: 0 0 6px var(--accent-skeuo);
+    box-shadow: 0 0 7px var(--accent-skeuo);
 }
 
 .skeuo-input {
@@ -136,20 +162,21 @@ h1 {
     color: var(--text-main);
     outline: none;
     margin-bottom: 1rem;
-    box-shadow: inset 0 3px 6px rgba(0,0,0,0.5);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.5);
     transition: all 0.2s ease;
 }
 
 .skeuo-input:focus {
     border-color: var(--accent-skeuo);
-    box-shadow: inset 0 3px 6px rgba(0,0,0,0.5), 0 0 10px rgba(59, 130, 246, 0.3);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.5), 0 0 10px rgba(59, 130, 246, 0.3);
 }
 
-.skeuo-btn {
+.skeuo-btn,
+.boton-dial-skeuo {
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 0.98rem;
     font-weight: 700;
-    padding: 0.8rem 1.8rem;
+    padding: 0.8rem 1.7rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -160,15 +187,22 @@ h1 {
     justify-content: center;
     gap: 0.5rem;
     box-shadow: 0 6px 15px rgba(29, 78, 216, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                inset 0 -2px 4px rgba(0, 0, 0, 0.3);
-    transition: all 0.1s ease;
+                inset 0 1px 0 rgba(255, 255, 255, 0.32),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.32);
+    transition: all 0.12s ease;
 }
 
-.skeuo-btn:active {
+.skeuo-btn:active,
+.boton-dial-skeuo:active {
     transform: translateY(2px);
     box-shadow: 0 2px 5px rgba(29, 78, 216, 0.4),
-                inset 0 2px 4px rgba(0, 0, 0, 0.4);
+                inset 0 2px 4px rgba(0, 0, 0, 0.45);
+}
+
+.boton-dial-skeuo.metal {
+    background: linear-gradient(180deg, #3b4252, #282e3a);
+    border: 1px solid #4c566a;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 /* Galería de Iconos UI */
@@ -197,8 +231,8 @@ h1 {
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--text-muted);
-    box-shadow: inset 0 1px 2px rgba(255,255,255,0.05),
-                0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.05),
+                0 4px 8px rgba(0, 0, 0, 0.22);
     transition: all 0.2s ease;
 }
 
@@ -206,7 +240,7 @@ h1 {
     color: var(--text-main);
     border-color: var(--accent-skeuo);
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 .icon-card svg {
@@ -217,4 +251,107 @@ h1 {
     stroke-width: 2.2;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
+
+/* Sección guía inferior e interactiva */
+.guia-diferenciacion-skeuo {
+    margin-top: 2.5rem;
+    border-top: 2px solid var(--border-metal);
+    padding-top: 1.75rem;
+}
+
+.guia-encabezado-skeuo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.guia-encabezado-skeuo h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.pista-lectura-skeuo {
+    background: #191d24;
+    border: 1px solid var(--border-metal);
+    border-radius: 6px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #93c5fd;
+}
+
+.rejilla-guia-skeuo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.tarjeta-rasgo-skeuo {
+    background: linear-gradient(145deg, #242934, #1b1f27);
+    border: 2px solid var(--border-metal);
+    border-radius: 12px;
+    padding: 1.3rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 6px 14px rgba(0, 0, 0, 0.28);
+}
+
+.tarjeta-rasgo-skeuo h3 {
+    margin: 0 0 0.8rem 0;
+    font-size: 1.02rem;
+    font-weight: 900;
+    color: #ffffff;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lista-puntos-skeuo {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.72rem;
+}
+
+.lista-puntos-skeuo li {
+    font-size: 0.9rem;
+    line-height: 1.48;
+    color: var(--text-muted);
+}
+
+.etiqueta-comparativa-skeuo {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.16);
+    color: #93c5fd;
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    border-radius: 5px;
+    font-size: 0.73rem;
+    font-weight: 800;
+    padding: 0.1rem 0.45rem;
+    margin-right: 0.35rem;
+}
+
+.banco-pruebas-skeuo {
+    margin-top: 1.5rem;
+    background: linear-gradient(145deg, #222731, #191d24);
+    border: 2px solid var(--border-metal);
+    border-radius: 12px;
+    padding: 1.3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+.controles-dial-skeuo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
 }

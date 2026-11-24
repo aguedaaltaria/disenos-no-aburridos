@@ -1,13 +1,18 @@
-/* 
-  Paleta Neobrutalista: 
+/*
+  Paleta Neobrutalista:
   Fondo amarillo vibrante con acentos en rosa fuerte y azul eléctrico.
 */
 :root {
-    --bg-neo: #facc15;       
-    --black-neo: #0f172a;    /* Usamos un negro suave para bordes/sombras y evitar fatiga visual */
-    --accent-pink: #f43f5e;  
-    --accent-blue: #3b82f6;  
+    --bg-neo: #facc15;
+    --black-neo: #0f172a;
+    --accent-pink: #f43f5e;
+    --accent-blue: #3b82f6;
+    --accent-mint: #10b981;
     --white-neo: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -15,55 +20,73 @@ body {
     background-color: var(--bg-neo);
     color: var(--black-neo);
     padding: 2rem;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 
-/* 
-  REGLA CLAVE:
-  Bordes gruesos (4px) y sombras sólidas (box-shadow sin blur).
-  Esto da la sensación de un elemento "recortado" de papel.
-*/
+.barra-superior-neo {
+    width: 100%;
+    max-width: 900px;
+}
+
 .neo-container {
     width: 100%;
     max-width: 900px;
     background-color: var(--white-neo);
     border: 4px solid var(--black-neo);
-    /* offset-x | offset-y | blur (0px) | color */
-    box-shadow: 8px 8px 0px var(--black-neo); 
-    border-radius: 8px; 
-    padding: 2rem;
-    margin-top: 2rem;
+    box-shadow: 8px 8px 0px var(--black-neo);
+    border-radius: 4px;
+    padding: 2.25rem;
+    margin-top: 1.5rem;
 }
 
-/* Botón de regreso */
+.etiqueta-neo {
+    display: inline-block;
+    background-color: var(--black-neo);
+    color: var(--bg-neo);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    margin-bottom: 0.75rem;
+}
+
 .btn-back {
     display: inline-block;
     text-decoration: none;
     background-color: var(--white-neo);
     color: var(--black-neo);
     font-weight: 900;
-    padding: 0.5rem 1.5rem;
+    padding: 0.55rem 1.4rem;
     border: 3px solid var(--black-neo);
+    border-radius: 4px;
     box-shadow: 4px 4px 0px var(--black-neo);
-    transition: all 0.1s ease-in-out;
-    margin-bottom: 2rem;
+    transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.1s ease;
 }
 
-/* Efecto Click: Simulamos que el botón se hunde "comiéndose" la sombra */
-.btn-back:active, .neo-btn:active {
+.btn-back:hover {
+    background-color: #f8fafc;
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0px var(--black-neo);
+}
+
+.btn-back:active {
     transform: translate(4px, 4px);
     box-shadow: 0px 0px 0px var(--black-neo);
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: clamp(2.2rem, 4.5vw, 3rem);
     font-weight: 900;
     text-transform: uppercase;
     border-bottom: 4px solid var(--black-neo);
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
+    padding-bottom: 0.9rem;
+    margin: 0 0 1.5rem 0;
 }
 
 .components-grid {
@@ -72,43 +95,87 @@ h1 {
     gap: 2rem;
 }
 
-/* Tarjeta Neobrutalista */
 .neo-card {
     background-color: var(--accent-pink);
     border: 4px solid var(--black-neo);
     box-shadow: 6px 6px 0px var(--black-neo);
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 4px;
     color: var(--white-neo);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.neo-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px var(--black-neo);
 }
 
 .neo-card h2 {
     font-weight: 900;
-    margin-bottom: 1rem;
+    margin: 0 0 0.75rem 0;
     color: var(--black-neo);
 }
 
-/* Botones y Formularios */
-.neo-btn {
-    font-family: inherit;
-    font-size: 1.1rem;
+.neo-card p {
+    margin: 0 0 1rem 0;
     font-weight: 700;
-    padding: 0.75rem 1.5rem;
+    line-height: 1.5;
+}
+
+.sello-brutal {
+    display: inline-block;
+    background-color: var(--white-neo);
+    color: var(--black-neo);
+    border: 2px solid var(--black-neo);
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    box-shadow: 2px 2px 0px var(--black-neo);
+}
+
+/* Todos los botones neobrutalistas comparten el mismo desplazamiento mecánico al pulsar */
+.neo-btn,
+.boton-demo-neo {
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 800;
+    padding: 0.8rem 1.5rem;
     border: 3px solid var(--black-neo);
+    border-radius: 4px;
     box-shadow: 5px 5px 0px var(--black-neo);
     cursor: pointer;
     background-color: var(--accent-blue);
     color: var(--white-neo);
-    transition: transform 0.1s, box-shadow 0.1s;
+    transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.12s ease;
+}
+
+.neo-btn:hover,
+.boton-demo-neo:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 6px 6px 0px var(--black-neo);
+}
+
+.neo-btn:active,
+.boton-demo-neo:active {
+    transform: translate(4px, 4px);
+    box-shadow: 1px 1px 0px var(--black-neo);
+}
+
+.boton-demo-neo.alterno {
+    background-color: var(--accent-mint);
+    color: var(--black-neo);
 }
 
 .neo-input {
     width: 100%;
-    padding: 1rem;
+    padding: 0.95rem 1rem;
     font-size: 1rem;
     font-family: inherit;
     font-weight: 700;
+    color: var(--black-neo);
     border: 3px solid var(--black-neo);
+    border-radius: 4px;
     background-color: #f8fafc;
     box-shadow: 4px 4px 0px var(--black-neo);
     outline: none;
@@ -120,34 +187,31 @@ h1 {
     border-color: var(--accent-pink);
 }
 
-/* Utilidades para botones con iconos neobrutalistas */
 .btn-with-icon {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-/* Trazos gruesos y cuadrados para hacer juego con los bordes duros */
 .btn-with-icon svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     fill: none;
     stroke: currentColor;
-    stroke-width: 3; 
-    stroke-linecap: square; 
+    stroke-width: 3;
+    stroke-linecap: square;
     stroke-linejoin: miter;
     transition: transform 0.1s ease;
 }
 
-/* Efectos de movimiento al interactuar */
 .btn-back:hover svg {
     transform: translateX(-4px);
 }
+
 .neo-btn:hover svg {
-    transform: translateX(4px) scale(1.1);
+    transform: translateX(4px) scale(1.08);
 }
 
-/* Sección de galería de iconos */
 .icon-showcase {
     margin-top: 2rem;
     border-top: 4px solid var(--black-neo);
@@ -156,7 +220,7 @@ h1 {
 
 .icon-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -164,6 +228,7 @@ h1 {
 .icon-card {
     background-color: var(--white-neo);
     border: 3px solid var(--black-neo);
+    border-radius: 4px;
     box-shadow: 4px 4px 0px var(--black-neo);
     padding: 1rem;
     display: flex;
@@ -171,17 +236,22 @@ h1 {
     align-items: center;
     gap: 0.5rem;
     font-size: 0.85rem;
-    font-weight: 700;
-    transition: transform 0.1s ease;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.1s ease;
 }
 
 .icon-card:hover {
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0px var(--black-neo);
-    background-color: #f1f5f9;
+    background-color: var(--bg-neo);
 }
 
-/* Tamaño y grosor de los iconos en la galería */
+.icon-card:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0px var(--black-neo);
+}
+
 .icon-card svg {
     width: 28px;
     height: 28px;
@@ -190,4 +260,124 @@ h1 {
     stroke-width: 3;
     stroke-linecap: square;
     stroke-linejoin: miter;
+}
+
+/* Sección informativa e interactiva inferior */
+.guia-diferenciacion-neo {
+    margin-top: 2.25rem;
+    border-top: 4px solid var(--black-neo);
+    padding-top: 1.75rem;
+}
+
+.guia-encabezado-neo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.guia-encabezado-neo h2 {
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.pista-lectura-neo {
+    background-color: #fef9c3;
+    border: 2px solid var(--black-neo);
+    padding: 0.25rem 0.65rem;
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.rejilla-guia-neo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.5rem;
+}
+
+.tarjeta-rasgo-neo {
+    background-color: #f8fafc;
+    border: 3px solid var(--black-neo);
+    box-shadow: 5px 5px 0px var(--black-neo);
+    border-radius: 4px;
+    padding: 1.35rem;
+}
+
+.tarjeta-rasgo-neo h3 {
+    margin: 0 0 0.85rem 0;
+    font-size: 1.05rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-bottom: 0.45rem;
+    border-bottom: 2px solid var(--black-neo);
+}
+
+.lista-puntos-neo {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.lista-puntos-neo li {
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.45;
+    color: #1e293b;
+}
+
+.etiqueta-comparativa-neo {
+    display: inline-block;
+    background-color: var(--bg-neo);
+    color: var(--black-neo);
+    border: 2px solid var(--black-neo);
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 0.1rem 0.45rem;
+    margin-right: 0.35rem;
+}
+
+.etiqueta-comparativa-neo.contraste-azul {
+    background-color: #dbeafe;
+}
+
+.etiqueta-comparativa-neo.contraste-menta {
+    background-color: #d1fae5;
+}
+
+/* Banco interactivo para probar el clic y la sombra */
+.banco-pruebas-neo {
+    margin-top: 1.5rem;
+    background-color: #fef9c3;
+    border: 3px solid var(--black-neo);
+    box-shadow: 5px 5px 0px var(--black-neo);
+    border-radius: 4px;
+    padding: 1.35rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.controles-demo-neo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+
+.estado-interaccion-neo {
+    width: 100%;
+    background-color: var(--white-neo);
+    border: 2px solid var(--black-neo);
+    padding: 0.65rem 0.9rem;
+    font-size: 0.88rem;
+    font-weight: 800;
 }

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skeuomorphism Moderno - Modern UI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="skeuomorph.css">
 </head>
 <body>
 
-    <div style="width: 100%; max-width: 900px;">
+    <div class="barra-superior-skeuo">
         <a href="/" class="btn-back">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Volver al Hub
@@ -17,84 +17,171 @@
     </div>
 
     <main class="skeuo-container">
+        <span class="etiqueta-hardware-skeuo">
+            <span class="led-indicador-skeuo"></span>
+            Hardware Tactile // Rack Module
+        </span>
         <h1>Skeuomorphism Moderno</h1>
         <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-muted); margin-bottom: 2rem;">
-            Tangibilidad del mundo real optimizada para la web. Superficies metálicas texturizadas, diales físicos y volumen tridimensional con rendimiento fluido.
+            Tangibilidad del mundo real optimizada para la web: superficies metálicas, diales físicos y volumen tridimensional con respuesta fluida.
         </p>
 
         <div class="components-grid">
-            <!-- Tarjeta con Dial Hardware -->
             <article class="skeuo-card">
-                <h2 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 1rem; color: #ffffff;">Módulo de Audio / FX</h2>
-                
+                <h2 style="font-size: 1.25rem; font-weight: 900; margin: 0 0 1rem 0; color: #ffffff;">Módulo de Audio / FX</h2>
+
                 <div class="skeuo-dial-container">
-                    <div class="skeuo-dial"></div>
+                    <div id="dialHardwarePrincipal" class="skeuo-dial" title="Haz clic para girar el dial"></div>
                     <div>
-                        <p style="font-weight: 700; margin-bottom: 0.2rem;">Filtro Analógico</p>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Simulación táctil de perilla con relieve e iluminación LED.</p>
+                        <p id="tituloFiltroSkeuo" style="font-weight: 800; margin: 0 0 0.25rem 0; color: #ffffff;">Filtro Analógico · 820 Hz</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Perilla metálica con relieve interior, sombra profunda e indicador LED.</p>
                     </div>
                 </div>
             </article>
 
-            <!-- Formulario Táctil -->
             <section style="display: flex; flex-direction: column; justify-content: center;">
                 <input type="text" class="skeuo-input" placeholder="Configurar parámetro..." />
-                <button class="skeuo-btn">
+                <button type="button" id="botonAplicarSkeuo" class="skeuo-btn">
                     <span>Aplicar Ajuste</span>
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
             </section>
         </div>
 
-        <!-- Galería de Iconos UI -->
         <section class="icon-showcase">
-            <h2 style="font-size: 1.4rem; font-weight: 900; margin-bottom: 0.5rem; color: #ffffff;">Biblioteca de Iconos UI</h2>
-            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">Iconos vectoriales con acabado metálico y relieve de estudio.</p>
-            
+            <h2 style="font-size: 1.4rem; font-weight: 900; margin: 0 0 0.5rem 0; color: #ffffff;">Biblioteca de Iconos UI</h2>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">Iconos vectoriales sobre placas de estudio con bisel metálico.</p>
+
             <div class="icon-grid">
-                <!-- Search -->
-                <div class="icon-card">
-                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                    Search
+                <div class="icon-card"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Search</div>
+                <div class="icon-card"><svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</div>
+                <div class="icon-card"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0l2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</div>
+                <div class="icon-card"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Favorite</div>
+                <div class="icon-card"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Delete</div>
+                <div class="icon-card"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Star</div>
+                <div class="icon-card"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Check</div>
+                <div class="icon-card"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Close</div>
+            </div>
+        </section>
+
+        <section class="guia-diferenciacion-skeuo" aria-label="Características y diferencias de Skeuomorphism Moderno">
+            <div class="guia-encabezado-skeuo">
+                <h2>Características y Diferencias</h2>
+                <span class="pista-lectura-skeuo">Hardware Táctil // Profundidad Física</span>
+            </div>
+
+            <div class="rejilla-guia-skeuo">
+                <article class="tarjeta-rasgo-skeuo">
+                    <h3>Rasgos Esenciales</h3>
+                    <ul class="lista-puntos-skeuo">
+                        <li>
+                            <span class="etiqueta-comparativa-skeuo">Relieve Real</span>
+                            Sombras exteriores profundas junto a brillos y huecos internos (<code>inset</code>) que simulan metal o plástico.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-skeuo">Controles</span>
+                            Diales, perillas e interruptores que evocan consolas de audio o equipos físicos.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-skeuo">Contraste</span>
+                            Mantiene legibilidad y alto contraste a diferencia del neumorfismo clásico de bajo contraste.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-skeuo">Rendimiento</span>
+                            Logra volumen mediante CSS limpio sin depender de imágenes pesadas en cada botón.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta-rasgo-skeuo">
+                    <h3>Cómo No Confundirlo</h3>
+                    <ul class="lista-puntos-skeuo">
+                        <li>
+                            <span class="etiqueta-comparativa-skeuo">Vs. Claymorphism</span>
+                            Clay imita plastilina o arcilla blanda y mullida; Skeuomorphism moderno evoca hardware, metal o instrumentos táctiles.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-skeuo">Vs. Y2K / Retro</span>
+                            Y2K recrea la estética nostálgica de ventanas grises y 3D primitivo de finales de los 90; aquí la profundidad es moderna y cuidada.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-skeuo">Vs. Glassmorphism</span>
+                            Glassmorphism se basa en paneles translúcidos esmerilados; Skeuomorphism prioriza superficies sólidas con volumen físico.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-skeuo">Vs. Cyberpunk</span>
+                            Cyberpunk usa *scanlines* y neón urbano; aquí mandan los acabados de equipo o consola de estudio.
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="banco-pruebas-skeuo">
+                <div style="flex: 1; min-width: 220px;">
+                    <h3 style="margin: 0 0 0.25rem 0; font-size: 1rem; font-weight: 900; color: #ffffff;">
+                        Gira el Dial del Filtro Analógico
+                    </h3>
+                    <p id="estadoDialSkeuo" style="margin: 0; font-size: 0.88rem; color: var(--text-muted);">
+                        Posición actual: -45deg · Frecuencia: 820 Hz.
+                    </p>
                 </div>
-                <!-- Home -->
-                <div class="icon-card">
-                    <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                    Home
-                </div>
-                <!-- Settings -->
-                <div class="icon-card">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0l2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-                    Settings
-                </div>
-                <!-- Favorite -->
-                <div class="icon-card">
-                    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                    Favorite
-                </div>
-                <!-- Delete -->
-                <div class="icon-card">
-                    <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-                    Delete
-                </div>
-                <!-- Star -->
-                <div class="icon-card">
-                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    Star
-                </div>
-                <!-- Check Circle -->
-                <div class="icon-card">
-                    <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    Check
-                </div>
-                <!-- Close -->
-                <div class="icon-card">
-                    <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                    Close
+
+                <div class="controles-dial-skeuo">
+                    <button type="button" id="botonGirarDialSkeuo" class="boton-dial-skeuo">Girar Perilla (+45°)</button>
+                    <button type="button" id="botonResetDialSkeuo" class="boton-dial-skeuo metal">Centrar (0°)</button>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        (function () {
+            const pasosDial = [
+                { angulo: -45, hz: 820 },
+                { angulo: 0, hz: 1450 },
+                { angulo: 45, hz: 2600 },
+                { angulo: 90, hz: 4800 },
+                { angulo: 135, hz: 9200 }
+            ];
+
+            const dialElemento = document.getElementById('dialHardwarePrincipal');
+            const botonGirar = document.getElementById('botonGirarDialSkeuo');
+            const botonReset = document.getElementById('botonResetDialSkeuo');
+            const tituloFiltro = document.getElementById('tituloFiltroSkeuo');
+            const estadoDial = document.getElementById('estadoDialSkeuo');
+            const raiz = document.documentElement;
+            let indicePaso = 0;
+
+            function aplicarPaso(indice) {
+                const paso = pasosDial[indice];
+                raiz.style.setProperty('--angulo-dial', `${paso.angulo}deg`);
+                if (tituloFiltro) {
+                    tituloFiltro.textContent = `Filtro Analógico · ${paso.hz} Hz`;
+                }
+                if (estadoDial) {
+                    estadoDial.textContent = `Posición actual: ${paso.angulo}deg · Frecuencia: ${paso.hz} Hz.`;
+                }
+            }
+
+            function avanzarDial() {
+                indicePaso = (indicePaso + 1) % pasosDial.length;
+                aplicarPaso(indicePaso);
+            }
+
+            if (dialElemento) {
+                dialElemento.addEventListener('click', avanzarDial);
+            }
+            if (botonGirar) {
+                botonGirar.addEventListener('click', avanzarDial);
+            }
+            if (botonReset) {
+                botonReset.addEventListener('click', () => {
+                    indicePaso = 1;
+                    aplicarPaso(indicePaso);
+                });
+            }
+        })();
+    </script>
 
 </body>
 </html>

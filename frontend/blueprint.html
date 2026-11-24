@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint / Technical Ink - Modern UI Showcase</title>
+  <link rel="stylesheet" href="blueprint.css">
+</head>
+<body>
+
+  <div class="barra-superior">
+    <a href="/" class="boton-volver">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      <span>Volver al Hub</span>
+    </a>
+  </div>
+
+  <main class="lienzo-plano">
+    <div class="encabezado-cota">
+      <span>LAMINA // ARQ-03</span>
+      <span id="etiquetaReticulaPlano">RETICULA: 100PX / 20PX</span>
+      <span>ESCALA 1:1</span>
+    </div>
+
+    <h1 class="titulo-plano">Blueprint / Technical Ink</h1>
+    <p class="descripcion-plano">
+      Inspirado en planos técnicos, esquemas de ingeniería y dibujos arquitectónicos sobre fondo azul cobalto con cuadrícula doble, líneas finas de tinta y cotas punteadas.
+    </p>
+
+    <div class="rejilla-componentes">
+      <article class="caja-cota">
+        <h2>[COTA_01] Módulo de Plano</h2>
+        <p>
+          Ideal para diagramas de estructura, fichas técnicas, mapas de arquitectura o paneles donde el orden métrico guía la lectura.
+        </p>
+      </article>
+
+      <section class="formulario-plano">
+        <input type="text" id="entradaCotaPlano" class="entrada-plano" placeholder="Etiqueta o medida de cota..." />
+        <button type="button" id="botonTrazarEsquema" class="boton-plano">
+          <span>Trazar Esquema</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </section>
+    </div>
+
+    <section class="seccion-iconos">
+      <h2>Iconos de Tinta Técnica (SVG)</h2>
+      <div class="galeria-iconos">
+        <div class="ficha-icono">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <span>Search</span>
+        </div>
+        <div class="ficha-icono">
+          <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Home</span>
+        </div>
+        <div class="ficha-icono">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0l2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Settings</span>
+        </div>
+        <div class="ficha-icono">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>Favorite</span>
+        </div>
+        <div class="ficha-icono">
+          <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          <span>Delete</span>
+        </div>
+        <div class="ficha-icono">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>Star</span>
+        </div>
+        <div class="ficha-icono">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span>Check</span>
+        </div>
+        <div class="ficha-icono">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <span>Close</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="guia-diferenciacion-plano" aria-label="Características y diferencias de Blueprint / Technical Ink">
+      <div class="guia-encabezado-plano">
+        <h2>Características y Diferencias</h2>
+        <span class="pista-lectura-plano">LAMINA // ESPECIFICACION TECNICA</span>
+      </div>
+
+      <div class="rejilla-guia-plano">
+        <article class="tarjeta-rasgo-plano">
+          <h3>Rasgos Esenciales</h3>
+          <ul class="lista-puntos-plano">
+            <li>
+              <span class="etiqueta-comparativa-plano">Retícula</span>
+              Doble cuadrícula de ingeniería (<code>100px</code> principal y <code>20px</code> secundaria) sobre azul cobalto.
+            </li>
+            <li>
+              <span class="etiqueta-comparativa-plano">Cotas</span>
+              Recuadros punteados (<code>dashed</code>) y encabezados con código de lámina y escala.
+            </li>
+            <li>
+              <span class="etiqueta-comparativa-plano">Tipografía</span>
+              Monoespaciada técnica que refuerza la precisión métrica y el orden documental.
+            </li>
+            <li>
+              <span class="etiqueta-comparativa-plano">Tinta Clara</span>
+              Trazos finos en blanco y celeste que contrastan con claridad sobre el fondo cobalto.
+            </li>
+          </ul>
+        </article>
+
+        <article class="tarjeta-rasgo-plano">
+          <h3>Cómo No Confundirlo</h3>
+          <ul class="lista-puntos-plano">
+            <li>
+              <span class="etiqueta-comparativa-plano">Vs. Wireframe</span>
+              Wireframe es un esquema neutral de UX en blanco y negro; Blueprint usa azul cobalto, cuadrícula doble y cotas de plano técnico.
+            </li>
+            <li>
+              <span class="etiqueta-comparativa-plano">Vs. Y2K / Retro</span>
+              Y2K simula ventanas de sistema operativo antiguo con biseles grises; Blueprint simula láminas de arquitectura o ingeniería.
+            </li>
+            <li>
+              <span class="etiqueta-comparativa-plano">Vs. Minimalismo Suizo</span>
+              Lo suizo prioriza tipografía editorial y espacio en blanco; Blueprint prioriza ejes, cotas y retícula técnica.
+            </li>
+            <li>
+              <span class="etiqueta-comparativa-plano">Vs. Sketch</span>
+              Sketch busca calidez de libreta y trazos asimétricos a mano alzada; Blueprint busca precisión geométrica y técnica.
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="banco-pruebas-plano">
+        <div class="fila-controles-plano">
+          <button type="button" id="botonAlternarReticula" class="boton-plano" style="padding: 0.55rem 1rem; font-size: 0.85rem;">
+            Alternar Retícula 20px
+          </button>
+          <span style="font-size: 0.84rem; color: var(--tinta-suave);">
+            También puedes escribir una cota arriba y pulsar <strong>Trazar Esquema</strong>.
+          </span>
+        </div>
+
+        <ul id="listaCotasPlano" class="lista-cotas-plano">
+          <li>[COTA_01] Eje principal del contenedor: max-width 920px</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const raiz = document.documentElement;
+      const botonReticula = document.getElementById('botonAlternarReticula');
+      const etiquetaReticula = document.getElementById('etiquetaReticulaPlano');
+      const entradaCota = document.getElementById('entradaCotaPlano');
+      const botonTrazar = document.getElementById('botonTrazarEsquema');
+      const listaCotas = document.getElementById('listaCotasPlano');
+      let reticulaActiva = true;
+      let contadorCota = 1;
+
+      if (botonReticula) {
+        botonReticula.addEventListener('click', () => {
+          reticulaActiva = !reticulaActiva;
+          if (reticulaActiva) {
+            raiz.style.setProperty('--reticula-secundaria', 'rgba(255, 255, 255, 0.06)');
+            if (etiquetaReticula) etiquetaReticula.textContent = 'RETICULA: 100PX / 20PX';
+          } else {
+            raiz.style.setProperty('--reticula-secundaria', 'transparent');
+            if (etiquetaReticula) etiquetaReticula.textContent = 'RETICULA: 100PX (SOLO MAYOR)';
+          }
+        });
+      }
+
+      function trazarNuevaCota() {
+        if (!entradaCota || !listaCotas) return;
+        const medida = entradaCota.value.trim();
+        if (!medida) return;
+
+        contadorCota += 1;
+        const codigo = `COTA_${String(contadorCota).padStart(2, '0')}`;
+        const item = document.createElement('li');
+        item.textContent = `[${codigo}] ${medida}`;
+        listaCotas.appendChild(item);
+        entradaCota.value = '';
+        entradaCota.focus();
+      }
+
+      if (botonTrazar) {
+        botonTrazar.addEventListener('click', trazarNuevaCota);
+      }
+      if (entradaCota) {
+        entradaCota.addEventListener('keydown', (evento) => {
+          if (evento.key === 'Enter') {
+            evento.preventDefault();
+            trazarNuevaCota();
+          }
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

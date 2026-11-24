@@ -8,33 +8,33 @@
 </head>
 <body>
 
-    <div style="width: 100%; max-width: 900px;">
+    <div class="barra-superior-y2k">
         <a href="/" class="btn-back">◄ Volver al Hub</a>
     </div>
 
     <main class="y2k-window">
         <div class="y2k-titlebar">
             <span>Y2K_Retro_Viewer.exe</span>
-            <div class="y2k-btn-close">X</div>
+            <div id="botonCerrarSimulado" class="y2k-btn-close" title="Simular acción de ventana">X</div>
         </div>
 
         <div class="y2k-content">
-            <h1 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem;">Y2K / Retro Web</h1>
-            <p style="font-size: 0.95rem; line-height: 1.4; margin-bottom: 1.5rem;">
-                Nostalgia de los inicios de internet, interfaces metálicas de Windows 98, botones biselados y tipografías de terminal clásica.
+            <h1 style="font-size: 1.8rem; font-weight: bold; margin: 0 0 0.8rem 0;">Y2K / Retro Web</h1>
+            <p style="font-size: 0.95rem; line-height: 1.45; margin: 0 0 1.5rem 0;">
+                Nostalgia de los inicios de internet, ventanas metálicas de escritorio clásico, botones biselados y tipografía de terminal.
             </p>
 
             <div class="components-grid">
                 <article class="y2k-box">
-                    <h3 style="font-weight: bold; margin-bottom: 0.5rem; font-size: 1rem;">Módulo Winamp</h3>
-                    <p style="font-size: 0.85rem; color: #333;">
-                        Bordes biselados grises con relieve de 3D primitivo que definieron la era dorada de la web de los 2000.
+                    <h3 style="font-weight: bold; margin: 0 0 0.5rem 0; font-size: 1rem;">Módulo Winamp</h3>
+                    <p style="font-size: 0.85rem; color: #333; line-height: 1.45; margin: 0;">
+                        Bordes biselados grises con relieve primitivo que definieron las interfaces de escritorio y reproductores de finales de los 90 y los 2000.
                     </p>
                 </article>
 
                 <section style="display: flex; flex-direction: column; justify-content: center;">
                     <input type="text" class="y2k-input" placeholder="Introduce nickname..." />
-                    <button class="y2k-button">
+                    <button type="button" class="y2k-button">
                         <span>Ejecutar Comando</span>
                         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </button>
@@ -42,7 +42,7 @@
             </div>
 
             <section class="icon-showcase">
-                <h3 style="font-size: 1rem; font-weight: bold; margin-bottom: 0.5rem;">Sistema de Iconos UI (Retro)</h3>
+                <h3 style="font-size: 1rem; font-weight: bold; margin: 0 0 0.5rem 0;">Sistema de Iconos UI (Retro)</h3>
                 <div class="icon-grid">
                     <div class="icon-card"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Search</div>
                     <div class="icon-card"><svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</div>
@@ -50,8 +50,141 @@
                     <div class="icon-card"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Star</div>
                 </div>
             </section>
+
+            <section class="guia-diferenciacion-y2k" aria-label="Características y diferencias de Y2K / Retro Web">
+                <div class="guia-encabezado-y2k">
+                    <h2>Características y Diferencias</h2>
+                    <span class="pista-lectura-y2k">1998–2001 // BEVEL &amp; DESKTOP UI</span>
+                </div>
+
+                <div class="rejilla-guia-y2k">
+                    <article class="tarjeta-rasgo-y2k">
+                        <h3>Rasgos Esenciales</h3>
+                        <ul class="lista-puntos-y2k">
+                            <li>
+                                <span class="etiqueta-comparativa-y2k">Biselado</span>
+                                Bordes claros arriba/izquierda y oscuros abajo/derecha que invierten su relieve al pulsar (<code>:active</code>).
+                            </li>
+                            <li>
+                                <span class="etiqueta-comparativa-y2k">Ventana OS</span>
+                                Barra de título azul degradada, botón de cierre cuadrado y marco gris plata sobre fondo <em>teal</em>.
+                            </li>
+                            <li>
+                                <span class="etiqueta-comparativa-y2k">Tipografía</span>
+                                Fuentes monoespaciadas clásicas (<code>Courier New</code>) con aire de utilidad o reproductor de escritorio.
+                            </li>
+                            <li>
+                                <span class="etiqueta-comparativa-y2k">Tacto</span>
+                                Respuesta inmediata y mecánica sin transiciones elásticas modernas.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="tarjeta-rasgo-y2k">
+                        <h3>Cómo No Confundirlo</h3>
+                        <ul class="lista-puntos-y2k">
+                            <li>
+                                <span class="etiqueta-comparativa-y2k">Vs. Wireframe</span>
+                                Wireframe es un esquema neutral de UX en blanco y negro; Y2K recrea la estética nostálgica de un sistema operativo antiguo.
+                            </li>
+                            <li>
+                                <span class="etiqueta-comparativa-y2k">Vs. Skeuomorphism</span>
+                                Skeuomorphism busca realismo táctil moderno (metal cepillado, diales, sombras profundas); Y2K emula el 3D primitivo de 8/16 bits o Windows 98.
+                            </li>
+                            <li>
+                                <span class="etiqueta-comparativa-y2k">Vs. Cyberpunk</span>
+                                Cyberpunk es nocturno, con neón intenso y *scanlines*; Y2K es luminoso/grisáceo con estética de escritorio retro.
+                            </li>
+                            <li>
+                                <span class="etiqueta-comparativa-y2k">Vs. Blueprint</span>
+                                Blueprint es un plano técnico de ingeniería con cotas y retícula métrica; Y2K es una ventana de programa retro.
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="banco-pruebas-y2k">
+                    <div>
+                        <h3 style="margin: 0 0 0.25rem 0; font-size: 0.92rem; font-weight: bold; text-transform: uppercase;">
+                            Terminal Retro de Prueba
+                        </h3>
+                        <p style="margin: 0; font-size: 11.5px; color: #333;">
+                            Escribe <code>HELP</code>, <code>VER</code>, <code>WINAMP</code> o cualquier comando y presiona Ejecutar.
+                        </p>
+                    </div>
+
+                    <div class="fila-comando-y2k">
+                        <input type="text" id="entradaComandoY2K" class="y2k-input" placeholder="C:\Y2K> escribe un comando..." />
+                        <button type="button" id="botonEjecutarY2K" class="y2k-button">Ejecutar</button>
+                    </div>
+
+                    <div id="salidaConsolaY2K" class="salida-consola-y2k">
+                        C:\Y2K&gt; Sistema retro listo. Prueba escribiendo HELP o VER.
+                    </div>
+                </div>
+            </section>
+
+            <div class="barra-estado-y2k">
+                <span id="estadoVentanaY2K">Estado: Activa</span>
+                <span>Modo: Retro Desktop (800x600 spirit)</span>
+            </div>
         </div>
     </main>
+
+    <script>
+        (function () {
+            const entradaComando = document.getElementById('entradaComandoY2K');
+            const botonEjecutar = document.getElementById('botonEjecutarY2K');
+            const salidaConsola = document.getElementById('salidaConsolaY2K');
+            const botonCerrar = document.getElementById('botonCerrarSimulado');
+            const estadoVentana = document.getElementById('estadoVentanaY2K');
+
+            function ejecutarComandoRetro() {
+                if (!entradaComando || !salidaConsola) return;
+                const comandoRaw = entradaComando.value.trim();
+                const comando = comandoRaw.toUpperCase();
+
+                if (!comando) {
+                    salidaConsola.textContent = 'C:\\Y2K> Ingresa un comando válido (ej. HELP, VER, WINAMP).';
+                    return;
+                }
+
+                let respuesta = `Ejecutando "${comandoRaw}"... OK (0 errors).`;
+                if (comando === 'HELP') {
+                    respuesta = 'Comandos disponibles: HELP, VER, WINAMP, CLEAR.';
+                } else if (comando === 'VER') {
+                    respuesta = 'Y2K Retro Viewer [Build 1999.12.31] - Biseles activos.';
+                } else if (comando === 'WINAMP') {
+                    respuesta = 'It really whips the llama\'s ass! [Audio Buffer OK]';
+                } else if (comando === 'CLEAR') {
+                    salidaConsola.textContent = 'C:\\Y2K> Consola limpia.';
+                    entradaComando.value = '';
+                    return;
+                }
+
+                salidaConsola.textContent = `C:\\Y2K> ${comandoRaw}\n> ${respuesta}`;
+                entradaComando.value = '';
+                entradaComando.focus();
+            }
+
+            if (botonEjecutar) {
+                botonEjecutar.addEventListener('click', ejecutarComandoRetro);
+            }
+            if (entradaComando) {
+                entradaComando.addEventListener('keydown', (evento) => {
+                    if (evento.key === 'Enter') {
+                        evento.preventDefault();
+                        ejecutarComandoRetro();
+                    }
+                });
+            }
+            if (botonCerrar && estadoVentana) {
+                botonCerrar.addEventListener('click', () => {
+                    estadoVentana.textContent = 'Estado: Botón [X] pulsado (ventana protegida en showcase)';
+                });
+            }
+        })();
+    </script>
 
 </body>
 </html>

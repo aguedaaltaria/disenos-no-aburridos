@@ -4,96 +4,213 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurora UI - Modern UI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="aurora.css">
 </head>
 <body>
 
-    <!-- Orbes de luz difusa de la aurora (más intensos y dinámicos) -->
+    <!-- Orbes de luz difusa que crean la atmósfera de aurora boreal -->
     <div class="aurora-glow glow-1"></div>
     <div class="aurora-glow glow-2"></div>
     <div class="aurora-glow glow-3"></div>
     <div class="aurora-glow glow-4"></div>
 
-    <a href="/" class="btn-back">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Volver al Hub
-    </a>
+    <div class="barra-superior-aurora">
+        <a href="/" class="btn-back">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Volver al Hub
+        </a>
+    </div>
 
     <main class="aurora-container">
+        <span class="etiqueta-polar">AMBIENT LIGHT // BOREAL FLOW</span>
         <h1>Aurora UI</h1>
         <p style="font-size: 1.2rem; font-weight: 700; color: var(--text-muted); margin-bottom: 2rem;">
-            Gradientes fluidos, luminosos y difusos inspirados en las auroras boreales. Una estética futurista y etérea que aporta sofisticación y profundidad visual.
+            Gradientes fluidos, luminosos y difusos inspirados en las auroras boreales: una atmósfera etérea donde la luz ambiental da profundidad sin bordes afilados.
         </p>
 
         <div class="components-grid">
-            <!-- Tarjeta Aurora -->
             <article class="aurora-card">
-                <h2 style="font-size: 1.3rem; font-weight: 900; margin-bottom: 0.8rem; color: #00f2fe;">Tarjeta Luminosa</h2>
-                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">
-                    Los contenedores translúcidos flotan sobre fondos de luz difuminados con animación fluida, logrando un aspecto de alta gama.
+                <h2 style="font-size: 1.3rem; font-weight: 900; margin-bottom: 0.8rem; color: var(--aurora-1);">Tarjeta Luminosa</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin: 0;">
+                    Los contenedores flotan sobre capas de luz difusa en movimiento lento, aportando un clima sereno y futurista.
                 </p>
             </article>
 
-            <!-- Formulario Aurora -->
             <section style="display: flex; flex-direction: column; justify-content: center;">
                 <input type="text" class="aurora-input" placeholder="Tu correo electrónico..." />
-                <button class="aurora-btn">
+                <button type="button" class="aurora-btn">
                     <span>Activar Aurora</span>
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
             </section>
         </div>
 
-        <!-- Galería de Iconos UI -->
         <section class="icon-showcase">
-            <h2 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 0.5rem; color: #00f2fe;">Biblioteca de Iconos UI</h2>
-            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">Iconos vectoriales con trazos limpios e iluminación sutil.</p>
+            <h2 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 0.5rem; color: var(--aurora-1);">Biblioteca de Iconos UI</h2>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">Iconos vectoriales con trazos limpios y resplandor suave.</p>
             
             <div class="icon-grid">
-                <!-- Search -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                     Search
                 </div>
-                <!-- Home -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                     Home
                 </div>
-                <!-- Settings -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0l.2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
                     Settings
                 </div>
-                <!-- Favorite -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     Favorite
                 </div>
-                <!-- Delete -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
                     Delete
                 </div>
-                <!-- Star -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     Star
                 </div>
-                <!-- Check Circle -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                     Check
                 </div>
-                <!-- Close -->
                 <div class="icon-card">
                     <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                     Close
                 </div>
             </div>
         </section>
+
+        <section class="guia-diferenciacion-aurora" aria-label="Características y diferencias de Aurora UI">
+            <div class="guia-encabezado-aurora">
+                <h2>Características y Diferencias</h2>
+                <span class="pista-lectura-aurora">Luz ambiental + variación de cielo</span>
+            </div>
+
+            <div class="rejilla-guia-aurora">
+                <article class="tarjeta-rasgo-aurora">
+                    <h3>Rasgos Esenciales</h3>
+                    <ul class="lista-puntos-aurora">
+                        <li>
+                            <span class="etiqueta-comparativa-aurora">Atmósfera</span>
+                            Grandes masas de color con desenfoque alto (<code>blur: 95px</code>) que envuelven el fondo.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-aurora">Fluidez</span>
+                            Movimiento suave y continuo que evoca cortinas de luz en el cielo nocturno.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-aurora">Degradados</span>
+                            Transiciones cromáticas armónicas (cian, esmeralda, azul y púrpura) sobre base oscura.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-aurora">Sutileza</span>
+                            Las tarjetas acompañan la luz sin competir con líneas gruesas ni ángulos agresivos.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta-rasgo-aurora">
+                    <h3>Cómo No Confundirlo</h3>
+                    <ul class="lista-puntos-aurora">
+                        <li>
+                            <span class="etiqueta-comparativa-aurora contraste-purpura">Vs. Glassmorphism</span>
+                            Aurora se enfoca en el clima de luz difusa ambiental; Glassmorphism se centra en el bisel y esmerilado de un cristal sobre figuras nítidas.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-aurora">Vs. Cyberpunk</span>
+                            Cyberpunk es agresivo, angular y técnico (neón duro, rejillas, estética sci-fi); Aurora es envolvente y etéreo.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-aurora contraste-purpura">Vs. Diseño Orgánico</span>
+                            Lo orgánico moldea siluetas físicas y tonos botánicos/terrosos; Aurora ilumina el espacio con luz difusa.
+                        </li>
+                        <li>
+                            <span class="etiqueta-comparativa-aurora">Vs. Bento UI</span>
+                            Bento organiza por compartimentos modulares de rejilla; Aurora prioriza la continuidad atmosférica del fondo.
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="banco-pruebas-aurora">
+                <div style="flex: 1; min-width: 240px;">
+                    <h3 style="margin: 0 0 0.25rem 0; font-size: 1rem; font-weight: 900;">
+                        Prueba la Atmósfera de Luz de la Aurora
+                    </h3>
+                    <p id="estadoAtmosferaAurora" style="margin: 0; font-size: 0.88rem; color: var(--text-muted);">
+                        Clima actual: Cian Boreal y Púrpura (equilibrio luminoso).
+                    </p>
+                </div>
+
+                <div class="controles-atmosfera-aurora">
+                    <button type="button" class="boton-clima-aurora activo" data-clima="boreal" data-desc="Clima actual: Cian Boreal y Púrpura (equilibrio luminoso).">Boreal Clásico</button>
+                    <button type="button" class="boton-clima-aurora secundario" data-clima="esmeralda" data-desc="Clima actual: Cortina Esmeralda y Turquesa (tono polar sereno).">Cortina Esmeralda</button>
+                    <button type="button" class="boton-clima-aurora secundario" data-clima="crepusculo" data-desc="Clima actual: Crepúsculo Violeta y Magenta suave.">Crepúsculo Violeta</button>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <script>
+        (function () {
+            const botonesClima = document.querySelectorAll('.boton-clima-aurora');
+            const textoEstado = document.getElementById('estadoAtmosferaAurora');
+            const raiz = document.documentElement;
+
+            const paletasClima = {
+                boreal: {
+                    g1: '#00f2fe',
+                    g2: '#4facfe',
+                    g3: '#a855f7',
+                    g4: '#10b981'
+                },
+                esmeralda: {
+                    g1: '#34d399',
+                    g2: '#06b6d4',
+                    g3: '#10b981',
+                    g4: '#38bdf8'
+                },
+                crepusculo: {
+                    g1: '#c084fc',
+                    g2: '#f472b6',
+                    g3: '#818cf8',
+                    g4: '#38bdf8'
+                }
+            };
+
+            botonesClima.forEach((boton) => {
+                boton.addEventListener('click', () => {
+                    const clima = boton.getAttribute('data-clima');
+                    const descripcion = boton.getAttribute('data-desc');
+                    const colores = paletasClima[clima];
+
+                    botonesClima.forEach((btn) => {
+                        btn.classList.remove('activo');
+                        btn.classList.add('secundario');
+                    });
+                    boton.classList.remove('secundario');
+                    boton.classList.add('activo');
+
+                    if (colores) {
+                        raiz.style.setProperty('--aurora-1', colores.g1);
+                        raiz.style.setProperty('--aurora-2', colores.g2);
+                        raiz.style.setProperty('--aurora-3', colores.g3);
+                        raiz.style.setProperty('--aurora-4', colores.g4);
+                    }
+
+                    if (textoEstado && descripcion) {
+                        textoEstado.textContent = descripcion;
+                    }
+                });
+            });
+        })();
+    </script>
 
 </body>
 </html>
